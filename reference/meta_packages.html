@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.2.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,14 +51,14 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">meta_packages</span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"https://multiverse.r-multiverse.org"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">meta_packages</span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"https://community.r-multiverse.org"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>repo</dt>
 <dd><p>Character of length 1, URL of the package repository.
-R-multiverse uses <code>"https://multiverse.r-multiverse.org"</code>.</p></dd>
+R-multiverse uses <code>"https://community.r-multiverse.org"</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -73,29 +73,29 @@ metadata.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">meta_packages</span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"https://wlandau.r-universe.dev"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        _id        package    version            license</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 666319a14e86770016661a28           crew 0.9.3.9002 MIT + file LICENSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 66747689035c3700149b0f54           crew      0.9.4 MIT + file LICENSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 66580c6dd014ca0014e5afc2 crew.aws.batch 0.0.5.9000 MIT + file LICENSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 665179088d83a20014a4037a   crew.cluster      0.3.1 MIT + file LICENSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 6668dccf2892390016e16c0b          mirai 1.1.0.9000         GPL (&gt;= 3)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 6668dd4a2892390016e16c38       nanonext 1.1.0.9000         GPL (&gt;= 3)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 667465db035c3700149b0073   crew.cluster      0.3.1 MIT + file LICENSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 6674bae332b53b0016d0d76b          mirai 1.1.0.9004         GPL (&gt;= 3)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 6675759ef2c7cc00121b1740       nanonext 1.1.0.9004         GPL (&gt;= 3)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                  remotesha needscompilation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 eafad0276c06dec2344da2f03596178c754c8b5e               no</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 c02449ff1e0441314576541a71688374a4d1ecaa               no</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 4d9e5b44e2942d119af963339c48d134e84de458               no</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 d4ac61fd9a1d9539088ffebdadcd4bb713c25ee1               no</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2000bd77c090bb8048363fb95ed49cd63898453e               no</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 52f5d2e82126b2d6b9b58d8c95c774eb1a03cd9d              yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 1adfcebbb02bd06e4687e11f1fedfa238e822433               no</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 86b4b7c4319e66d56b9197f98f3fc1bfd13b18cc               no</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 5f5aff199de48fb7d481b20f0d94433c91dbc183              yes</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                             md5sum _type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 642e9ac93d39d462ee6f95d8522afbe1   src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 ba90fac40eca6e29b3ed4332bcd74bcf   src</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 23c2733447eae95614fd6af1889b57e8   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 5707d786c1aa3848fd37e6bf4598ea4c   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 d93268d767ddaf135bfac83a0d4fc529   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 47d71a0e01e4a537cc2a42acd870380c   src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 49615ca9f7a7e5913a9d74a7df12842d   src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 0a6c3908efef61189b8091799d14a65b   src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 5350379026b9b402571d20f11f6311af   src</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           _dependencies</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 R, cli, data.table, getip, later, mirai, nanonext, processx, promises, ps, R6, rlang, stats, tibble, tidyselect, tools, utils, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 3.1.0, NA, NA, NA, &gt;= 0.12.0, &gt;= 0.12.0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                                                                         R, cli, crew, paws.common, paws.compute, paws.management, R6, rlang, tibble, utils, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 3.1.0, &gt;= 0.8.0, &gt;= 0.7.0, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                                                                                                                            R, crew, ps, lifecycle, R6, rlang, utils, vctrs, xml2, yaml, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 0.8.0, NA, NA, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                                                                                                                                                                                                                                                                                                     R, nanonext, knitr, markdown, parallel, promises, &gt;= 3.6, &gt;= 1.1.0.9000, NA, NA, NA, NA, Depends, Imports, Suggests, Suggests, Enhances, Enhances</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                                                                                                                                                                                                                                                                                                                                             R, later, later, knitr, markdown, &gt;= 3.5, NA, NA, NA, NA, Depends, LinkingTo, Imports, Suggests, Suggests</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                                                                                                                                                                                                                                                                                                     R, nanonext, knitr, markdown, parallel, promises, &gt;= 3.6, &gt;= 1.1.0.9003, NA, NA, NA, NA, Depends, Imports, Suggests, Suggests, Enhances, Enhances</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                                                                                                                                                                                                                                                                                                                                          R, knitr, later, markdown, promises, &gt;= 3.5, NA, NA, NA, NA, Depends, Suggests, Suggests, Suggests, Enhances</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   distro</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  noble</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  noble</span>
