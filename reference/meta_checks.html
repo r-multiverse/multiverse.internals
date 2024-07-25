@@ -9,7 +9,7 @@ R-universe package API."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.8</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.9</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ R-universe package API."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>List metadata about R-universe package checks</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.2.8/R/meta_checks.R" class="external-link"><code>R/meta_checks.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/meta_checks.R" class="external-link"><code>R/meta_checks.R</code></a></small>
       <div class="d-none name"><code>meta_checks.Rd</code></div>
     </div>
 
@@ -64,29 +64,29 @@ package check results.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">meta_checks</span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"https://wlandau.r-universe.dev"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                       package   _user _type _status _winbinary _macbinary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew                     crew wlandau   src success    success    success</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext             nanonext wlandau   src success    success    success</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> mirai                   mirai wlandau   src success    success    success</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster     crew.cluster wlandau   src success    success    success</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew                     crew wlandau   src success    success    success</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch crew.aws.batch wlandau   src success    success    success</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext             nanonext wlandau   src success    success    success</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                _wasmbinary _linuxdevel</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew               success     success</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext           success     success</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> mirai              success     success</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster       success     success</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew               success     success</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch     success     success</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext           success     success</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                     _buildurl</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mirai          https://github.com/r-universe/wlandau/actions/runs/10008154126</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster    https://github.com/r-universe/wlandau/actions/runs/9877928243</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew            https://github.com/r-universe/wlandau/actions/runs/9703112216</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch  https://github.com/r-universe/wlandau/actions/runs/9877927548</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext       https://github.com/r-universe/wlandau/actions/runs/10007197196</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew           https://github.com/r-universe/wlandau/actions/runs/10082934663</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext       https://github.com/r-universe/wlandau/actions/runs/10084738679</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> mirai          https://github.com/r-universe/wlandau/actions/runs/10093036903</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster   https://github.com/r-universe/wlandau/actions/runs/10082935205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch https://github.com/r-universe/wlandau/actions/runs/10082935005</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                _indexed _binaries</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew               TRUE      NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext          FALSE      NULL</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> mirai             FALSE      NULL</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster       TRUE      NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew               TRUE      NULL</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch     TRUE      NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext          FALSE      NULL</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
