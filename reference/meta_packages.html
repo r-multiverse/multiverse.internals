@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.10</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>List package metadata</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.2.9/R/meta_packages.R" class="external-link"><code>R/meta_packages.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/meta_packages.R" class="external-link"><code>R/meta_packages.R</code></a></small>
       <div class="d-none name"><code>meta_packages.Rd</code></div>
     </div>
 
@@ -56,40 +56,45 @@ R-multiverse uses <code>"https://community.r-multiverse.org"</code>.</p></dd>
     <p>A data frame with one row per package and columns with package
 metadata.</p>
     </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other meta:
+<code><a href="meta_checks.html">meta_checks</a>()</code></p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">meta_packages</span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"https://wlandau.r-universe.dev"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                     _id        package    version</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew           66a159e867947a312ef110b0           crew 0.9.5.9003</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch 66a1b8be67947a312ef1aef1 crew.aws.batch 0.0.6.9004</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster   66a1b8aa67947a312ef1ae62   crew.cluster 0.3.2.9003</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mirai          66a233f7309255ca4e168f5e          mirai 1.1.1.9007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext       66a17e0967947a312ef174ac       nanonext 1.1.1.9007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew           66b0d2a9b506c5b6321da186           crew 0.9.5.9007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch 66ad95df76d89de6b1761df2 crew.aws.batch 0.0.6.9005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster   66ad95a676d89de6b1761db0   crew.cluster 0.3.2.9004</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> mirai          66c4eb95b9e16199e5b3b184          mirai 1.2.0.9001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext       66c4faabb9e16199e5b3bc9f       nanonext 1.2.1.9001</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                           license                                remotesha</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew           MIT + file LICENSE e62928e1f10fea46b3c6c370afdba208af9bac49</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch MIT + file LICENSE 16ce8f9a43387b6b54e2918806d8e6121927bdf3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster   MIT + file LICENSE 000ae593700e72369e216641e7ad83c180f45da2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mirai                  GPL (&gt;= 3) 8a071189e21769472d3a3a355b8992d82308df56</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext               GPL (&gt;= 3) 852c2a0848d6d1ec64f614bcea2879134e419e72</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew           MIT + file LICENSE 96a190cef8712ad39561d591afa0d52a4708a53d</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch MIT + file LICENSE ca493bc9c61e4886a64f9b4da5778e7603fde3d1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster   MIT + file LICENSE a35c967004cccd947e7011fdf6f7fef674154c48</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> mirai                  GPL (&gt;= 3) 29c0bfed81e4249de4ed79e8db192e6e309b193d</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext               GPL (&gt;= 3) f4446fe2f967d84fd2bd8d47f2aaaea7e3b1478a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                needscompilation                           md5sum _type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew                         no da48854ec2e9f6993d09230284f7dbe4   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch               no cb11b8f7dfc513ddfb3a9d1fe099c3e9   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster                 no d5825710039948c89160973b744c22b1   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mirai                        no 9d83413c0ddb64e95b111cbfa46fd1eb   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext                    yes bdc92a068da54e0500d52ed29fa761eb   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        _dependencies</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew           R, cli, data.table, getip, later, mirai, nanonext, processx, promises, ps, R6, rlang, stats, tibble, tidyselect, tools, utils, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 3.1.0, NA, NA, NA, &gt;= 0.12.0, &gt;= 0.12.0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch                                                                                                                                    R, cli, crew, paws.common, paws.compute, paws.management, R6, rlang, tibble, utils, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 3.1.0, &gt;= 0.9.5.9003, &gt;= 0.7.0, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster                                                                                                                                                                         R, crew, ps, lifecycle, R6, rlang, utils, vctrs, xml2, yaml, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 0.9.5.9003, NA, NA, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mirai                                                                                                                                                                                                                                                                                                                                                              R, nanonext, knitr, markdown, parallel, promises, &gt;= 3.6, &gt;= 1.1.1.9007, NA, NA, NA, NA, Depends, Imports, Suggests, Suggests, Enhances, Enhances</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext                                                                                                                                                                                                                                                                                                                                                                                                R, knitr, later, markdown, promises, &gt;= 3.6, NA, NA, NA, NA, Depends, Suggests, Suggests, Suggests, Enhances</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew                         no 70e87883228b7408bb7f083949c32158   src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch               no 24edea5adb6ffb53f0aa545cc2ccf7d9   src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster                 no 2195743ae468ef16038889c4f6bc7cfe   src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> mirai                        no 3baa17a74a8a42eecb2bebc39fd3814a   src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext                    yes c6bd4e44f0af5a9d99915b5685a6d209   src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      _dependencies</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew           R, cli, data.table, getip, later, mirai, nanonext, processx, promises, ps, R6, rlang, stats, tibble, tidyselect, tools, utils, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 3.1.0, NA, NA, NA, &gt;= 1.1.0, &gt;= 1.1.0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch                                                                                                                                  R, cli, crew, paws.common, paws.compute, paws.management, R6, rlang, tibble, utils, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 3.1.0, &gt;= 0.9.5.9007, &gt;= 0.7.0, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster                                                                                                                                                                       R, crew, ps, lifecycle, R6, rlang, utils, vctrs, xml2, yaml, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 0.9.5.9007, NA, NA, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> mirai                                                                                                                                                                                                                                                                                                                                                                                      R, nanonext, litedown, parallel, promises, &gt;= 3.6, &gt;= 1.2.0, NA, NA, NA, Depends, Imports, Suggests, Enhances, Enhances</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext                                                                                                                                                                                                                                                                                                                                                                                                                   R, later, litedown, promises, &gt;= 3.6, NA, NA, NA, Depends, Suggests, Suggests, Enhances</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                filesize distro</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew             992518  noble</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch   557895  noble</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster     386910  noble</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mirai            390241  noble</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext        1070690  noble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew            1015991  noble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.aws.batch   560677  noble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> crew.cluster     395481  noble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> mirai            387490  noble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nanonext        1065595  noble</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
