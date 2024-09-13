@@ -47,7 +47,7 @@ test_that("propose_snapshot()", {
     readLines(file.path(path_staging, "snapshot.url")),
     paste0(
       "https://staging.r-multiverse.org/api/snapshot/zip",
-      "?types=win,mac&packages=good1,good2"
+      "?types=src,win,mac&packages=good1,good2"
     )
   )
   propose_snapshot(
@@ -59,7 +59,7 @@ test_that("propose_snapshot()", {
     readLines(file.path(path_staging, "snapshot.url")),
     paste0(
       "https://staging.r-multiverse.org/api/snapshot/zip",
-      "?types=win,mac&binaries=4.5,4.4&packages=good1,good2"
+      "?types=src,win,mac&binaries=4.5,4.4&packages=good1,good2"
     )
   )
 })

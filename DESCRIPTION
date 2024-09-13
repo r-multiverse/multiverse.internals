@@ -2,7 +2,7 @@ Package: multiverse.internals
 Title: Internal Infrastructure for R-multiverse
 Description: R-multiverse requires this internal infrastructure package to
   automate contribution reviews and populate universes.
-Version: 0.2.11
+Version: 0.2.11.9000
 License: MIT + file LICENSE
 URL: https://github.com/r-multiverse/multiverse.internals
 BugReports: https://github.com/r-multiverse/multiverse.internals/issues
@@ -40,6 +40,6 @@ Suggests:
   testthat (>= 3.0.0)
 Encoding: UTF-8
 Language: en-US
-Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Config/testthat/edition: 3

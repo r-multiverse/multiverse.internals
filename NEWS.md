@@ -1,3 +1,7 @@
+# multiverse.internals 0.2.11.9000 (development)
+
+* Amend argument defaults in `propose_snapshot()` to include source files.
+
 # multiverse.internals 0.2.11
 
 * Implement `propose_snapshot()`.
