@@ -1,6 +1,7 @@
 # multiverse.internals 0.2.14
 
 * Allow `update_staging()` to work if the staging `packages.json` does not exist.
+* Remove `staging_is_resetting()` and rely on the cron syntax from <https://github.com/r-multiverse/staging/pull/3> to schedule the management of the staging universe.
 
 # multiverse.internals 0.2.13
 

@@ -27,4 +27,3 @@ reference:
   contents:
   - update_staging
   - propose_snapshot
-  - staging_is_active

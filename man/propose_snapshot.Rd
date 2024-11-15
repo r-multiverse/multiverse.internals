@@ -64,8 +64,6 @@ propose_snapshot(
 }
 \seealso{
 Other staging: 
-\code{\link{staging_is_active}()},
-\code{\link{staging_is_resetting}()},
 \code{\link{update_staging}()}
 }
 \concept{staging}
