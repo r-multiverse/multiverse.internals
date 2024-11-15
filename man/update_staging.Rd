@@ -53,6 +53,7 @@ update_staging(
 \seealso{
 Other staging: 
 \code{\link{propose_snapshot}()},
-\code{\link{staging_is_active}()}
+\code{\link{staging_is_active}()},
+\code{\link{staging_is_resetting}()}
 }
 \concept{staging}

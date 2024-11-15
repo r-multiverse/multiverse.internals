@@ -88,5 +88,5 @@ issues_dependencies_graph <- function(meta) {
   from <- from[keep]
   to <- to[keep]
   edges <- as.character(rbind(from, to))
-  igraph::graph(edges = edges)
+  igraph::make_graph(edges = edges)
 }

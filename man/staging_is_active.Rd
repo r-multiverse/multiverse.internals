@@ -2,7 +2,7 @@
 % Please edit documentation in R/staging_is_active.R
 \name{staging_is_active}
 \alias{staging_is_active}
-\title{Check if the stating universe is active.}
+\title{Check if the staging universe is active.}
 \usage{
 staging_is_active(
   start = c("01-15", "04-15", "07-15", "10-15"),
@@ -31,6 +31,7 @@ staging_is_active()
 \seealso{
 Other staging: 
 \code{\link{propose_snapshot}()},
+\code{\link{staging_is_resetting}()},
 \code{\link{update_staging}()}
 }
 \concept{staging}

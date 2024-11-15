@@ -1,3 +1,7 @@
+# multiverse.internals 0.2.14
+
+* Allow `update_staging()` to work if the staging `packages.json` does not exist.
+
 # multiverse.internals 0.2.13
 
 * Record issues for vulnerabilities in <https://github.com/RConsortium/r-advisory-database>.

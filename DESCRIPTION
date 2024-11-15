@@ -2,7 +2,7 @@ Package: multiverse.internals
 Title: Internal Infrastructure for R-multiverse
 Description: R-multiverse requires this internal infrastructure package to
   automate contribution reviews and populate universes.
-Version: 0.2.13
+Version: 0.2.14
 License: MIT + file LICENSE
 URL: https://github.com/r-multiverse/multiverse.internals
 BugReports: https://github.com/r-multiverse/multiverse.internals/issues

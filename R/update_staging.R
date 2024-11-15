@@ -35,7 +35,14 @@ update_staging <- function(
 ) {
   file_staging <- file.path(path_staging, "packages.json")
   file_community <- file.path(path_community, "packages.json")
-  json_staging <- jsonlite::read_json(file_staging, simplifyVector = TRUE)
+  if (file.exists(file_staging)) {
+    json_staging <- as.data.frame(
+      jsonlite::read_json(file_staging, simplifyVector = TRUE),
+      stringsAsFactors = FALSE
+    )
+  } else {
+    json_staging <- data.frame()
+  }
   json_community <- jsonlite::read_json(file_community, simplifyVector = TRUE)
   meta_community <- mock$community %||% meta_packages(repo_community)
   issues <- list.files(
