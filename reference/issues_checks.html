@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.13</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.14</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Report issues from R-universe package check results.</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.2.13/R/issues_checks.R" class="external-link"><code>R/issues_checks.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/issues_checks.R" class="external-link"><code>R/issues_checks.R</code></a></small>
       <div class="d-none name"><code>issues_checks.Rd</code></div>
     </div>
 
@@ -91,13 +91,7 @@ together all the issues about R-multiverse packages.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="meta_checks.html">meta_checks</a></span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"https://wlandau.r-universe.dev"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">issues</span> <span class="op">&lt;-</span> <span class="fu">issues_checks</span><span class="op">(</span>meta <span class="op">=</span> <span class="va">meta</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">issues</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ crew:List of 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ _linuxdevel: chr "failure"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ _macbinary : chr "success"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ _winbinary : chr "success"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ _status    : chr "success"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ _buildurl  : chr "https://github.com/r-universe/wlandau/actions/runs/10997319382"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  list()</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
