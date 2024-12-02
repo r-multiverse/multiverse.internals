@@ -9,7 +9,7 @@ package-specific JSON files."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.17</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.18</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ package-specific JSON files."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Record package issues.</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.2.7/R/record_issues.R" class="external-link"><code>R/record_issues.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/record_issues.R" class="external-link"><code>R/record_issues.R</code></a></small>
       <div class="d-none name"><code>record_issues.Rd</code></div>
     </div>
 
@@ -45,7 +45,7 @@ package-specific JSON files.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">record_issues</span><span class="op">(</span></span>
 <span>  repo <span class="op">=</span> <span class="st">"https://community.r-multiverse.org"</span>,</span>
 <span>  versions <span class="op">=</span> <span class="st">"versions.json"</span>,</span>
-<span>  output <span class="op">=</span> <span class="st">"issues"</span>,</span>
+<span>  output <span class="op">=</span> <span class="st">"issues.json"</span>,</span>
 <span>  mock <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -66,9 +66,9 @@ tracking the history of released versions of packages.</p></dd>
 
 
 <dt id="arg-output">output<a class="anchor" aria-label="anchor" href="#arg-output"></a></dt>
-<dd><p>Character of length 1, file path to the folder to record
+<dd><p>Character of length 1, file path to the JSON file to record
 new package issues. Each call to <code>record_issues()</code> overwrites the
-contents of the repo.</p></dd>
+contents of the file.</p></dd>
 
 
 <dt id="arg-mock">mock<a class="anchor" aria-label="anchor" href="#arg-mock"></a></dt>
@@ -99,17 +99,18 @@ of releases in R-multiverse, and <code>record_issues()</code> gathers
 together all the issues about R-multiverse packages.</p>
     </div>
     <div class="section level2">
-    <h2 id="issue-files">Issue files<a class="anchor" aria-label="anchor" href="#issue-files"></a></h2>
+    <h2 id="issue-data">Issue data<a class="anchor" aria-label="anchor" href="#issue-data"></a></h2>
 
 
 <p>For each package with observed problems, <code>record_issues()</code> writes
-an issue file. This issue file is a JSON list with one element
-per type of failing check. Each element has an informative name
+a JSON list entry in the output JSON file
+with one element for each type of failing check.
+Each check-specific element has an informative name
 (for example, <code>checks</code>, <code>descriptions</code>, or <code>versions</code>)
-and a list of diagnostic information.</p>
-<p>Each issue file also has a <code>date</code> field. This date the day that
-an issue was first noticed. It automatically resets the next time
-all package are resolved.</p>
+and a list of diagnostic information. In addition, there is a <code>date</code>
+field to indicate when an issue was first detected. The <code>date</code>
+automatically resets the next time all the issues in the package
+are resolved.</p>
     </div>
 
     <div class="section level2">

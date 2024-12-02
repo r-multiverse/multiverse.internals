@@ -13,7 +13,7 @@
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/get_current_versions.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/get_repo_file.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/index.html</loc></url>
-<url><loc>https://r-multiverse.org/multiverse.internals/reference/interpret_issue.html</loc></url>
+<url><loc>https://r-multiverse.org/multiverse.internals/reference/interpret_status.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/is_member_organization.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/issues_checks.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/issues_dependencies.html</loc></url>
@@ -31,5 +31,6 @@
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/review_pull_requests.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/try_message.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/update_staging.html</loc></url>
+<url><loc>https://r-multiverse.org/multiverse.internals/reference/update_status.html</loc></url>
 </urlset>
 
