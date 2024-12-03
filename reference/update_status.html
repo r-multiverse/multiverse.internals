@@ -9,7 +9,7 @@ packages."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.20</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.21</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ packages."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Update the package status repository</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.2.20/R/update_status.R" class="external-link"><code>R/update_status.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/update_status.R" class="external-link"><code>R/update_status.R</code></a></small>
       <div class="d-none name"><code>update_status.Rd</code></div>
     </div>
 
@@ -106,6 +106,16 @@ for inputs to various intermediate functions.</p></dd>
 <span class="r-in"><span>  path_community <span class="op">=</span> <span class="va">path_community</span>,</span></span>
 <span class="r-in"><span>  repo_staging <span class="op">=</span> <span class="st">"https://staging.r-multiverse.org"</span>,</span></span>
 <span class="r-in"><span>  repo_community <span class="op">=</span> <span class="st">"https://community.r-multiverse.org"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html" class="external-link">writeLines</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">path_status</span>, <span class="st">"community"</span>, <span class="st">"multiverse.internals.html"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html" class="external-link">writeLines</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">path_status</span>, <span class="st">"community"</span>, <span class="st">"multiverse.internals.xml"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
