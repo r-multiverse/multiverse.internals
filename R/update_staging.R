@@ -76,5 +76,13 @@ update_staging <- function(
   json_new <- rbind(json_freeze, json_update)
   json_new <- json_new[order(json_new$package), ]
   jsonlite::write_json(json_new, file_staging, pretty = TRUE)
+  file_config <- file.path(path_staging, "config.json")
+  json_config <- list(cran_version = date_staging_freeze())
+  jsonlite::write_json(
+    json_config,
+    file_config,
+    pretty = TRUE,
+    auto_unbox = TRUE
+  )
   invisible()
 }

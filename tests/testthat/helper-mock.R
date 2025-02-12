@@ -639,7 +639,12 @@ mock_meta_packages <- structure(
       c("hyunjimoon/SBC", "stan-dev/cmdstanr", ""), NULL, NULL,
       "markvanderloo/tinytest/pkg", NULL, NULL, NULL
     ),
-    foss = c(rep(TRUE, 15L), FALSE, rep(TRUE, 4L))
+    foss = c(rep(TRUE, 15L), FALSE, rep(TRUE, 4L)),
+    cran = c(
+      "1.0.0", NA, NA, NA, "0.0.1", "0.0.1", "0.0.1", "1.1.0",
+      NA, NA, "0.0.1", NA, "0.0.1", NA, "0.0.1", NA, NA, NA, "0.0.1",
+      NA
+    )
   ),
   class = "data.frame",
   row.names = c(NA, 20L)
@@ -770,7 +775,8 @@ mock_meta_packages_graph <- structure(
       )
     ),
     distro = c("noble", "noble", "noble", "noble", "noble"),
-    foss = rep(TRUE, 5L)
+    foss = rep(TRUE, 5L),
+    cran = rep(NA_character_, 5L)
   ),
   class = "data.frame",
   row.names = c(NA, 5L)

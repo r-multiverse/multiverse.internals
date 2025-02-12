@@ -11,21 +11,30 @@
 #' meta_checks(repo = "https://wlandau.r-universe.dev")
 meta_checks <- function(repo = "https://community.r-multiverse.org") {
   base <- file.path(trim_url(repo), "api", "packages?stream=true&fields=")
-  out <- jsonlite::stream_in(
-    con = gzcon(url(paste0(base, "_buildurl,_binaries"))),
+  json <- jsonlite::stream_in(
+    con = gzcon(url(paste0(base, "_buildurl,_binaries,_failure"))),
     verbose = FALSE,
     simplifyVector = TRUE,
     simplifyDataFrame = TRUE,
     simplifyMatrix = TRUE
   )
-  out$url <- out[["_buildurl"]]
-  out$issues <- lapply(out[["_binaries"]], meta_checks_issues)
-  colnames(out) <- tolower(colnames(out))
-  rownames(out) <- out$package
-  out[, c("package", "url", "issues")]
+  meta_checks_process_json(json)
 }
 
-meta_checks_issues <- function(binaries) {
+meta_checks_process_json <- function(json) {
+  json$url <- json[["_failure"]]$buildurl %||% rep(NA_character_, nrow(json))
+  success_source <- is.na(json$url)
+  json$url[success_source] <- json[["_buildurl"]][success_source]
+  json$issues <- lapply(json[["_binaries"]], meta_checks_issues_binaries)
+  for (index in which(!success_source)) {
+    json$issues[[index]]$source <- "FAILURE"
+  }
+  colnames(json) <- tolower(colnames(json))
+  rownames(json) <- json$package
+  json[, c("package", "url", "issues")]
+}
+
+meta_checks_issues_binaries <- function(binaries) {
   check <- .subset2(binaries, "check")
   os <- .subset2(binaries, "os")
   arch <- .subset2(binaries, "arch")

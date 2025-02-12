@@ -22,6 +22,7 @@ test_that("update_staging()", {
     to = dir_community,
     recursive = TRUE
   )
+  file_config <- file.path(path_staging, "config.json")
   file_staging <- file.path(path_staging, "packages.json")
   file_community <- file.path(path_community, "packages.json")
   json_staging <- jsonlite::read_json(file_staging)
@@ -40,6 +41,9 @@ test_that("update_staging()", {
     path_community = path_community,
     mock = list(community = meta_community)
   )
+  config <- jsonlite::read_json(file_config, simplifyVector = TRUE)
+  expect_equal(names(config), "cran_version")
+  expect_true(is.character(config$cran_version))
   packages <- jsonlite::read_json(file_staging, simplifyVector = TRUE)
   expect_true(is.data.frame(packages))
   expect_equal(dim(packages), c(4L, 3L))

@@ -39,7 +39,7 @@ propose_snapshot <- function(
   path_staging,
   repo_staging = "https://staging.r-multiverse.org",
   types = c("src", "win", "mac"),
-  r_versions = gsub("\\.[0-9]*$", "", rversions::r_release()$version),
+  r_versions = rversions::r_release()$version,
   mock = NULL
 ) {
   path_issues <- file.path(path_staging, "issues.json")

@@ -49,7 +49,7 @@ test_that("propose_snapshot()", {
       "https://staging.r-multiverse.org/api/snapshot/zip",
       "?types=src,win,mac",
       "&binaries=",
-      gsub("\\.[0-9]*$", "", rversions::r_release()$version),
+      rversions::r_release()$version,
       "&packages=good1,good2"
     )
   )

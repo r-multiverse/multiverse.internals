@@ -17,7 +17,20 @@ R-multiverse uses \code{"https://community.r-multiverse.org"}.}
 }
 \value{
 A data frame with one row per package and columns with package
-metadata.
+metadata. The most important columns are:
+\itemize{
+\item \code{package}: character vector of package names.
+\item \code{version}: character vector of package versions in the repo.
+\item \code{license}: character vector of license names.
+\item \code{remotesha}: character vector of GitHub/GitLab commit hashes.
+\item \code{remotes}: list of character vectors with dependencies in the
+\verb{Remotes:} field of the \code{DESCRIPTION} files.
+\item \code{foss}: \code{TRUE} if the package has a valid free open-source license,
+\code{FALSE} otherwise.
+\item \code{cran}: character vector of versions. Each version is the version of
+the package that was on CRAN during the first day of the most recent
+R-multiverse staging period.
+}
 }
 \description{
 List package metadata in an R universe.

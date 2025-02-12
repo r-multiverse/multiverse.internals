@@ -119,6 +119,12 @@ test_that("interpret_status() checks etc.", {
       fixed = TRUE
     )
   )
+  expect_true(
+    grepl(
+      "On CRAN",
+      interpret_status("SBC", issues)
+    )
+  )
   issues$tidypolars$dependencies <- list(x = "y")
   expect_true(
     grepl(

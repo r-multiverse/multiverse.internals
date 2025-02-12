@@ -5,10 +5,13 @@ test_that("issues_descriptions() mocked", {
     stantargets = list(
       remotes = c("hyunjimoon/SBC", "stan-dev/cmdstanr")
     ),
+    SBC = list(cran = "1.0.0"),
     targetsketch = list(license = "non-standard"),
     tidypolars = list(remotes = "markvanderloo/tinytest/pkg")
   )
-  expect_equal(issues, expected)
+  names <- sort(names(issues))
+  expect_equal(names, sort(names(expected)))
+  expect_equal(issues[names], expected[names])
 })
 
 test_that("issues_descriptions() on a small repo", {
@@ -46,9 +49,14 @@ test_that("issues_descriptions() with security advisories", {
         "blob/main/vulns/readxl/RSEC-2023-2.yaml"
       )
     ),
-    stantargets = list(remotes = c("hyunjimoon/SBC", "stan-dev/cmdstanr")),
+    stantargets = list(
+      remotes = c("hyunjimoon/SBC", "stan-dev/cmdstanr")
+    ),
+    SBC = list(cran = "1.0.0"),
     targetsketch = list(license = "non-standard"),
     tidypolars = list(remotes = "markvanderloo/tinytest/pkg")
   )
-  expect_equal(out, exp)
+  names <- sort(names(out))
+  expect_equal(names, sort(names(exp)))
+  expect_equal(out[names], exp[names])
 })
