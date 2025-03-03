@@ -1,3 +1,7 @@
+# multiverse.internals 0.3.9
+
+* Target Linux R-release instead of Linux R-devel (#112).
+
 # multiverse.internals 0.3.8
 
 * In the status repo, list all packages with check issues for each of Community and Staging.
