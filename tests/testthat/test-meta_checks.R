@@ -56,7 +56,7 @@ test_that("meta_checks_process_json() with a source failure", {
               "success", "success", "success", "success", "success", "success"
             ),
             check = c(
-              "OK", NA, "OK", "OK", "OK", NA, NA, "OK", "OK", "OK"
+              "OK", "OK", "OK", "OK", "OK", NA, NA, "OK", "OK", "OK"
             ),
             buildurl = c(
               "https://github.com/r-universe/r-multiverse-staging/binary",
@@ -99,7 +99,7 @@ test_that("meta_checks_process_json() with a source failure", {
               "success", "success", "success", "success",
               "success", "success", "success", "success", "success"
             ),
-            check = c("OK", NA, "OK", "OK", NA, NA, "OK", "OK", "OK"),
+            check = c("OK", "OK", "OK", "OK", NA, NA, "OK", "OK", "OK"),
             buildurl = c(
               "https://github.com/r-universe/r-multiverse-staging/binary",
               "https://github.com/r-universe/r-multiverse-staging/binary",

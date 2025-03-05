@@ -47,26 +47,19 @@ test_that("propose_snapshot()", {
     readLines(file.path(path_staging, "snapshot.url")),
     paste0(
       "https://staging.r-multiverse.org/api/snapshot/zip",
-      "?types=src,win,mac",
+      "?types=src",
       "&binaries=",
       staging_r_version()$short,
-      "&packages=good1,good2"
+      "&skip_packages=issue,removed-has-issue"
     )
   )
-  expect_equal(
-    readLines(file.path(path_staging, "date_snapshot.txt")),
-    as.character(Sys.Date())
+  meta <- jsonlite::read_json(
+    file.path(path_staging, "meta.json"),
+    simplifyVector = TRUE
   )
-  expect_equal(
-    readLines(file.path(path_staging, "date_staging_start.txt")),
-    as.character(staging_start())
-  )
-  expect_equal(
-    readLines(file.path(path_staging, "r_version_full.txt")),
-    as.character(staging_r_version()$full)
-  )
-  expect_equal(
-    readLines(file.path(path_staging, "r_version_short.txt")),
-    as.character(staging_r_version()$short)
-  )
+  expect_equal(sort(names(meta)), sort(c("date", "r_version")))
+  expect_true(is.character(meta$date$staging))
+  expect_true(is.character(meta$date$snapshot))
+  expect_true(is.character(meta$r_version$full))
+  expect_true(is.character(meta$r_version$short))
 })

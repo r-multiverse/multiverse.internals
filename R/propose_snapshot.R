@@ -35,7 +35,7 @@
 propose_snapshot <- function(
   path_staging,
   repo_staging = "https://staging.r-multiverse.org",
-  types = c("src", "win", "mac"),
+  types = "src",
   mock = NULL
 ) {
   path_issues <- file.path(path_staging, "issues.json")
@@ -66,19 +66,21 @@ propose_snapshot <- function(
     "?types=",
     paste(types, collapse = ","),
     binaries,
-    "&packages=",
-    paste(staging$package, collapse = ",")
+    "&skip_packages=",
+    paste(issues, collapse = ",")
   )
   writeLines(url, file.path(path_staging, "snapshot.url"))
-  writeLines(r_version$full, file.path(path_staging, "r_version_full.txt"))
-  writeLines(r_version$short, file.path(path_staging, "r_version_short.txt"))
-  writeLines(
-    staging_start(),
-    file.path(path_staging, "date_staging_start.txt")
+  meta <- list(
+    date = data.frame(
+      staging = staging_start(),
+      snapshot = as.character(Sys.Date())
+    ),
+    r_version = r_version[c("full", "short")]
   )
-  writeLines(
-    as.character(Sys.Date()),
-    file.path(path_staging, "date_snapshot.txt")
+  jsonlite::write_json(
+    meta,
+    file.path(path_staging, "meta.json"),
+    pretty = TRUE
   )
   invisible()
 }

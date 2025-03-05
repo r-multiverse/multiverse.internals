@@ -39,19 +39,17 @@ meta_checks_issues_binaries <- function(binaries) {
   os <- .subset2(binaries, "os")
   arch <- .subset2(binaries, "arch")
   r <- .subset2(binaries, "r")
-  devel <- is_r_devel(r)
-  release <- is_r_release(r)
+  is_release <- r_version_short(r) == staging_r_version()$short
   results <- c(
-    target_check("linux", "R-devel", os, arch, r, devel, check),
-    target_check("mac", "R-release", os, arch, r, release, check),
-    target_check("win", "R-release", os, arch, r, release, check)
+    target_check("linux", os, arch, r, is_release, check),
+    target_check("mac", os, arch, r, is_release, check),
+    target_check("win", os, arch, r, is_release, check)
   )
   as.list(results)
 }
 
 target_check <- function(
   target_os,
-  target_r,
   os,
   arch,
   r,
@@ -61,7 +59,7 @@ target_check <- function(
   is_target <- (target_os == os) & is_target_r
   if (!any(is_target) || all(is.na(check[is_target]))) {
     out <- "MISSING"
-    names(out) <- paste0(target_os, " ", target_r)
+    names(out) <- target_os
     return(out)
   }
   is_failure <- is_target & check %in% c("WARNING", "ERROR")
@@ -77,15 +75,4 @@ target_check <- function(
   }
   names(check) <- paste(os, r, sep = " ")
   check
-}
-
-is_r_release <- function(r) {
-  r_version_short(r) == staging_r_version()$short
-}
-
-is_r_devel <- function(r) {
-  major <- r_version_major(r)
-  minor <- r_version_minor(r)
-  staging <- staging_r_version()
-  major > staging$major | ((major == staging$major) & (minor > staging$minor))
 }
