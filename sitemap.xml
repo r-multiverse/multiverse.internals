@@ -10,8 +10,6 @@
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/assert_package.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/assert_package_description.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/assert_release_exists.html</loc></url>
-<url><loc>https://r-multiverse.org/multiverse.internals/reference/date_snapshot.html</loc></url>
-<url><loc>https://r-multiverse.org/multiverse.internals/reference/date_staging.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/get_current_versions.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/get_repo_file.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/index.html</loc></url>
@@ -24,16 +22,15 @@
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/list_organizations.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/meta_checks.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/meta_packages.html</loc></url>
-<url><loc>https://r-multiverse.org/multiverse.internals/reference/propose_snapshot.html</loc></url>
-<url><loc>https://r-multiverse.org/multiverse.internals/reference/r_version_staging.html</loc></url>
+<url><loc>https://r-multiverse.org/multiverse.internals/reference/meta_snapshot.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/read_advisories.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/record_issues.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/record_nonstandard_licenses.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/record_versions.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/review_pull_request.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/review_pull_requests.html</loc></url>
+<url><loc>https://r-multiverse.org/multiverse.internals/reference/stage_candidates.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/try_message.html</loc></url>
-<url><loc>https://r-multiverse.org/multiverse.internals/reference/update_staging.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/update_status.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/update_topics.html</loc></url>
 </urlset>

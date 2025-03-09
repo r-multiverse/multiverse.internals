@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +29,17 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.4.2/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.4.3" id="multiverseinternals-043">multiverse.internals 0.4.3<a class="anchor" aria-label="anchor" href="#multiverseinternals-043"></a></h2>
+<ul><li>Consolidate snapshot metadata management in <code><a href="../reference/meta_snapshot.html">meta_snapshot()</a></code>.</li>
+<li>Subsume <code>update_staging()</code> and <code>propose_snapshot()</code> into <code><a href="../reference/stage_candidates.html">stage_candidates()</a></code>.</li>
+<li>Rename <code>freeze.json</code> to <code>staged.json</code>.</li>
+<li>Rename <code>meta.json</code> to <code>snapshot.json</code>.</li>
+<li>Write a <code>production.html</code> page in <code><a href="../reference/update_status.html">update_status()</a></code>.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.4.2" id="multiverseinternals-042">multiverse.internals 0.4.2<a class="anchor" aria-label="anchor" href="#multiverseinternals-042"></a></h2>
 <ul><li>Rearrange fields in <code>meta.json</code>.</li>
@@ -65,7 +73,7 @@
 <h2 class="pkg-version" data-toc-text="0.3.6" id="multiverseinternals-036">multiverse.internals 0.3.6<a class="anchor" aria-label="anchor" href="#multiverseinternals-036"></a></h2>
 <ul><li>Detect source failures as issues.</li>
 <li>Flag R-multiverse packages whose CRAN versions from the day of the Staging freeze are higher than the current versions in R-multiverse.</li>
-<li>Use the whole R version in <code><a href="../reference/propose_snapshot.html">propose_snapshot()</a></code> so downstream automation can grep the snapshot URL for the version instead of needing to install R and the <code>rversions</code> package.</li>
+<li>Use the whole R version in <code>propose_snapshot()</code> so downstream automation can grep the snapshot URL for the version instead of needing to install R and the <code>rversions</code> package.</li>
 <li>Write <code>config.json</code> in Staging to select the CRAN snapshot from the start of the freeze.</li>
 </ul></div>
     <div class="section level2">
@@ -131,7 +139,7 @@
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.14" id="multiverseinternals-0214">multiverse.internals 0.2.14<a class="anchor" aria-label="anchor" href="#multiverseinternals-0214"></a></h2>
-<ul><li>Allow <code><a href="../reference/update_staging.html">update_staging()</a></code> to work if the staging <code>packages.json</code> does not exist.</li>
+<ul><li>Allow <code>update_staging()</code> to work if the staging <code>packages.json</code> does not exist.</li>
 <li>Remove <code>staging_is_resetting()</code> and rely on the cron syntax from <a href="https://github.com/r-multiverse/staging/pull/3" class="external-link uri">https://github.com/r-multiverse/staging/pull/3</a> to schedule the management of the staging universe.</li>
 </ul></div>
     <div class="section level2">
@@ -140,16 +148,16 @@
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.12" id="multiverseinternals-0212">multiverse.internals 0.2.12<a class="anchor" aria-label="anchor" href="#multiverseinternals-0212"></a></h2>
-<ul><li>Amend argument defaults in <code><a href="../reference/propose_snapshot.html">propose_snapshot()</a></code> to include source files.</li>
+<ul><li>Amend argument defaults in <code>propose_snapshot()</code> to include source files.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.11" id="multiverseinternals-0211">multiverse.internals 0.2.11<a class="anchor" aria-label="anchor" href="#multiverseinternals-0211"></a></h2>
-<ul><li>Implement <code><a href="../reference/propose_snapshot.html">propose_snapshot()</a></code>.</li>
+<ul><li>Implement <code>propose_snapshot()</code>.</li>
 <li>Exempt Production from WASM checks.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.10" id="multiverseinternals-0210">multiverse.internals 0.2.10<a class="anchor" aria-label="anchor" href="#multiverseinternals-0210"></a></h2>
-<ul><li>Implement freezing mechanism in <code><a href="../reference/update_staging.html">update_staging()</a></code>.</li>
+<ul><li>Implement freezing mechanism in <code>update_staging()</code>.</li>
 <li>Implement <code>staging_is_active()</code> to detect when the staging universe should be active.</li>
 </ul></div>
     <div class="section level2">
