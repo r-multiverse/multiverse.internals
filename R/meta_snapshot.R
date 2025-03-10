@@ -10,18 +10,18 @@
 #'   meta_snapshot(today = Sys.Date())
 meta_snapshot <- function(today = Sys.Date()) {
   today <- as.Date(today)
-  reset <- date_quarter(today)
-  staging <- month_later(date = reset)
-  snapshot <- month_later(date = staging)
+  dependency_freeze <- date_quarter(today)
+  candidate_freeze <- month_later(date = dependency_freeze)
+  snapshot <- month_later(date = candidate_freeze)
   data.frame(
-    reset = reset,
-    staging = staging,
+    dependency_freeze = dependency_freeze,
+    candidate_freeze = candidate_freeze,
     snapshot = snapshot,
-    r = meta_snapshot_r(date = staging),
+    r = meta_snapshot_r(date = dependency_freeze),
     cran = file.path(
       "https://packagemanager.posit.co",
       "cran",
-      staging
+      dependency_freeze
     ),
     r_multiverse = file.path(
       "https://production.r-multiverse.org",

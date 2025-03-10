@@ -1,21 +1,21 @@
 test_that("meta_snapshot() is correct", {
   check_snapshot <- function(
     today,
-    reset,
-    staging,
+    dependency_freeze,
+    candidate_freeze,
     snapshot,
     r
   ) {
     out <- meta_snapshot(today = today)
-    expect_equal(out$reset, reset)
-    expect_equal(out$staging, staging)
+    expect_equal(out$dependency_freeze, dependency_freeze)
+    expect_equal(out$candidate_freeze, candidate_freeze)
     expect_equal(out$snapshot, snapshot)
     expect_equal(out$r, r)
     expect_equal(
       out$cran,
       file.path(
         "https://packagemanager.posit.co/cran",
-        staging
+        dependency_freeze
       )
     )
     expect_equal(
@@ -32,8 +32,8 @@ test_that("meta_snapshot() is correct", {
   for (day in first) {
     check_snapshot(
       today = sprintf("2025-01-%s", day),
-      reset = "2024-10-15",
-      staging = "2024-11-15",
+      dependency_freeze = "2024-10-15",
+      candidate_freeze = "2024-11-15",
       snapshot = "2024-12-15",
       r = "4.4"
     )
@@ -41,8 +41,8 @@ test_that("meta_snapshot() is correct", {
   for (day in c(middle, last)) {
     check_snapshot(
       today = sprintf("2025-01-%s", day),
-      reset = "2025-01-15",
-      staging = "2025-02-15",
+      dependency_freeze = "2025-01-15",
+      candidate_freeze = "2025-02-15",
       snapshot = "2025-03-15",
       r = "4.4"
     )
@@ -51,8 +51,8 @@ test_that("meta_snapshot() is correct", {
     for (day in c(first, middle, last)) {
       check_snapshot(
         today = sprintf("2025-%s-%s", month, day),
-        reset = "2025-01-15",
-        staging = "2025-02-15",
+        dependency_freeze = "2025-01-15",
+        candidate_freeze = "2025-02-15",
         snapshot = "2025-03-15",
         r = "4.4"
       )
@@ -61,8 +61,8 @@ test_that("meta_snapshot() is correct", {
   for (day in first) {
     check_snapshot(
       today = sprintf("2025-04-%s", day),
-      reset = "2025-01-15",
-      staging = "2025-02-15",
+      dependency_freeze = "2025-01-15",
+      candidate_freeze = "2025-02-15",
       snapshot = "2025-03-15",
       r = "4.4"
     )
@@ -70,8 +70,8 @@ test_that("meta_snapshot() is correct", {
   for (day in c(middle, last)) {
     check_snapshot(
       today = sprintf("2025-04-%s", day),
-      reset = "2025-04-15",
-      staging = "2025-05-15",
+      dependency_freeze = "2025-04-15",
+      candidate_freeze = "2025-05-15",
       snapshot = "2025-06-15",
       r = "4.4"
     )
@@ -80,8 +80,8 @@ test_that("meta_snapshot() is correct", {
     for (day in c(first, middle, last)) {
       check_snapshot(
         today = sprintf("2025-%s-%s", month, day),
-        reset = "2025-04-15",
-        staging = "2025-05-15",
+        dependency_freeze = "2025-04-15",
+        candidate_freeze = "2025-05-15",
         snapshot = "2025-06-15",
         r = "4.4"
       )
@@ -90,8 +90,8 @@ test_that("meta_snapshot() is correct", {
   for (day in first) {
     check_snapshot(
       today = sprintf("2025-07-%s", day),
-      reset = "2025-04-15",
-      staging = "2025-05-15",
+      dependency_freeze = "2025-04-15",
+      candidate_freeze = "2025-05-15",
       snapshot = "2025-06-15",
       r = "4.4"
     )
@@ -99,8 +99,8 @@ test_that("meta_snapshot() is correct", {
   for (day in c(middle, last)) {
     check_snapshot(
       today = sprintf("2025-07-%s", day),
-      reset = "2025-07-15",
-      staging = "2025-08-15",
+      dependency_freeze = "2025-07-15",
+      candidate_freeze = "2025-08-15",
       snapshot = "2025-09-15",
       r = "4.4"
     )
@@ -109,8 +109,8 @@ test_that("meta_snapshot() is correct", {
     for (day in c(first, middle, last)) {
       check_snapshot(
         today = sprintf("2025-%s-%s", month, day),
-        reset = "2025-07-15",
-        staging = "2025-08-15",
+        dependency_freeze = "2025-07-15",
+        candidate_freeze = "2025-08-15",
         snapshot = "2025-09-15",
         r = "4.4"
       )
@@ -119,8 +119,8 @@ test_that("meta_snapshot() is correct", {
   for (day in first) {
     check_snapshot(
       today = sprintf("2025-10-%s", day),
-      reset = "2025-07-15",
-      staging = "2025-08-15",
+      dependency_freeze = "2025-07-15",
+      candidate_freeze = "2025-08-15",
       snapshot = "2025-09-15",
       r = "4.4"
     )
@@ -128,8 +128,8 @@ test_that("meta_snapshot() is correct", {
   for (day in c(middle, last)) {
     check_snapshot(
       today = sprintf("2025-10-%s", day),
-      reset = "2025-10-15",
-      staging = "2025-11-15",
+      dependency_freeze = "2025-10-15",
+      candidate_freeze = "2025-11-15",
       snapshot = "2025-12-15",
       r = "4.4"
     )
@@ -138,8 +138,8 @@ test_that("meta_snapshot() is correct", {
     for (day in c(first, middle, last)) {
       check_snapshot(
         today = sprintf("2025-%s-%s", month, day),
-        reset = "2025-10-15",
-        staging = "2025-11-15",
+        dependency_freeze = "2025-10-15",
+        candidate_freeze = "2025-11-15",
         snapshot = "2025-12-15",
         r = "4.4"
       )

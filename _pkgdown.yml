@@ -27,6 +27,7 @@ reference:
   - record_versions
 - title: Staging
   contents:
+  - freeze_dependencies
   - stage_candidates
 - title: Package status
   contents:

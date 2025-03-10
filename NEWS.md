@@ -1,3 +1,8 @@
+# multiverse.internals 0.4.4
+
+* Implement separate freezes for dependencies and release candidates (#146).
+* Add `freeze_dependencies()`.
+
 # multiverse.internals 0.4.3
 
 * Consolidate snapshot metadata management in `meta_snapshot()`.
