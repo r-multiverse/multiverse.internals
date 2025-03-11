@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.7</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Stage release candidates</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.4.6/R/stage_candidates.R" class="external-link"><code>R/stage_candidates.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/stage_candidates.R" class="external-link"><code>R/stage_candidates.R</code></a></small>
       <div class="d-none name"><code>stage_candidates.Rd</code></div>
     </div>
 
@@ -43,7 +43,6 @@
 <span>  <span class="va">path_staging</span>,</span>
 <span>  <span class="va">path_community</span>,</span>
 <span>  repo_community <span class="op">=</span> <span class="st">"https://community.r-multiverse.org"</span>,</span>
-<span>  types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"src"</span>, <span class="st">"win"</span>, <span class="st">"mac"</span><span class="op">)</span>,</span>
 <span>  mock <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -64,12 +63,6 @@ files of the Community universe.</p></dd>
 
 <dt id="arg-repo-community">repo_community<a class="anchor" aria-label="anchor" href="#arg-repo-community"></a></dt>
 <dd><p>Character string, URL of the Community universe.</p></dd>
-
-
-<dt id="arg-types">types<a class="anchor" aria-label="anchor" href="#arg-types"></a></dt>
-<dd><p>Character vector, what to pass to the <code>types</code> field in the
-snapshot API URL. Controls the types of binaries and documentation
-included in the snapshot.</p></dd>
 
 
 <dt id="arg-mock">mock<a class="anchor" aria-label="anchor" href="#arg-mock"></a></dt>
