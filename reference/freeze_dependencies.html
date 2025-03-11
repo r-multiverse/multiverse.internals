@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.8</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.9</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Freeze dependencies</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.4.8/R/freeze_dependencies.R" class="external-link"><code>R/freeze_dependencies.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/freeze_dependencies.R" class="external-link"><code>R/freeze_dependencies.R</code></a></small>
       <div class="d-none name"><code>freeze_dependencies.Rd</code></div>
     </div>
 
@@ -52,8 +52,8 @@ files of the Staging universe.</p></dd>
 
 
 <dt id="arg-path-community">path_community<a class="anchor" aria-label="anchor" href="#arg-path-community"></a></dt>
-<dd><p>Character string, directory path to the source
-files of the Community universe.</p></dd>
+<dd><p>Character string, local directory path
+to the clone of the Community universe GitHub repository.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -68,15 +68,15 @@ are locked in the Staging universe until after the next Production
 snapshot. This establishes checks in the Staging universe
 using the exact set of dependencies that will be used in the
 candidate freeze (see <code><a href="stage_candidates.html">stage_candidates()</a></code>).</p>
-<p><code>freeze_dependencies()</code> writes a <code>config.json</code> file with the date
-of the targeted CRAN snapshot. It also empties <code>staged.json</code>
-to allow a completely new set of packages to staged in the subsequent
-candidate freeze.</p>
+<p><code>freeze_dependencies()</code> copies the Community repository <code>packages.json</code>
+into the Staging repository to reset the Staging process.
+It also writes a <code>config.json</code> file with the date
+of the targeted CRAN snapshot.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other staging:
-<code><a href="filter_packages.html">filter_packages</a>()</code>,
+<code><a href="filter_meta.html">filter_meta</a>()</code>,
 <code><a href="rclone_includes.html">rclone_includes</a>()</code>,
 <code><a href="stage_candidates.html">stage_candidates</a>()</code></p></div>
     </div>
