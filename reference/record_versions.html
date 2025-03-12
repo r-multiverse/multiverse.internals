@@ -9,7 +9,7 @@ and their hashes."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.10</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ and their hashes."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Record the manifest of package versions.</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.4.9/R/record_versions.R" class="external-link"><code>R/record_versions.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/record_versions.R" class="external-link"><code>R/record_versions.R</code></a></small>
       <div class="d-none name"><code>record_versions.Rd</code></div>
     </div>
 
@@ -137,19 +137,9 @@ together all the issues about R-multiverse packages.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [27] "  {"                                                               </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [28] "    \"package\": \"nanonext\","                                    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [29] "    \"version_current\": \"1.5.1.9001\","                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [30] "    \"hash_current\": \"9f981d066db418a59bb8be73ab1f4da55c3849d0\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "  },"                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [32] "  {"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "    \"package\": \"proffer\","                                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [34] "    \"version_current\": \"0.2.2.9000\","                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [35] "    \"hash_current\": \"161b9e8f8e528384deffa6b8dd6e7abeeb130531\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [36] "  },"                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [37] "  {"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [38] "    \"package\": \"withr\","                                       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [39] "    \"version_current\": \"3.0.2.9001\","                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [40] "    \"hash_current\": \"59da5977ea1688e1c3064ab0c3eddb84c0be17d7\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "  }"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [42] "]"                                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [30] "    \"hash_current\": \"77b1cac28f96ab4f48007f37d0a2de1f8a1357ad\""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "  }"                                                               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [32] "]"                                                                 </span>
 <span class="r-in"><span>  <span class="co"># In subsequent snapshots, we have historical information about versions.</span></span></span>
 <span class="r-in"><span>  <span class="fu">record_versions</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    versions <span class="op">=</span> <span class="va">versions</span>,</span></span>
@@ -195,25 +185,11 @@ together all the issues about R-multiverse packages.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [37] "  {"                                                                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [38] "    \"package\": \"nanonext\","                                     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [39] "    \"version_current\": \"1.5.1.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [40] "    \"hash_current\": \"9f981d066db418a59bb8be73ab1f4da55c3849d0\","</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [40] "    \"hash_current\": \"77b1cac28f96ab4f48007f37d0a2de1f8a1357ad\","</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [41] "    \"version_highest\": \"1.5.1.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [42] "    \"hash_highest\": \"9f981d066db418a59bb8be73ab1f4da55c3849d0\"" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [43] "  },"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [44] "  {"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [45] "    \"package\": \"proffer\","                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [46] "    \"version_current\": \"0.2.2.9000\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [47] "    \"hash_current\": \"161b9e8f8e528384deffa6b8dd6e7abeeb130531\","</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [48] "    \"version_highest\": \"0.2.2.9000\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [49] "    \"hash_highest\": \"161b9e8f8e528384deffa6b8dd6e7abeeb130531\"" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [50] "  },"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [51] "  {"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [52] "    \"package\": \"withr\","                                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [53] "    \"version_current\": \"3.0.2.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [54] "    \"hash_current\": \"59da5977ea1688e1c3064ab0c3eddb84c0be17d7\","</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [55] "    \"version_highest\": \"3.0.2.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [56] "    \"hash_highest\": \"59da5977ea1688e1c3064ab0c3eddb84c0be17d7\"" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [57] "  }"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [58] "]"                                                                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [42] "    \"hash_highest\": \"77b1cac28f96ab4f48007f37d0a2de1f8a1357ad\"" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [43] "  }"                                                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [44] "]"                                                                  </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

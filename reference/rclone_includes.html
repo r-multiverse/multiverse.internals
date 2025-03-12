@@ -9,7 +9,7 @@ in Rclone when uploading snapshots."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.10</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ in Rclone when uploading snapshots."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Write Rclone includes.</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.4.9/R/rclone_includes.R" class="external-link"><code>R/rclone_includes.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/rclone_includes.R" class="external-link"><code>R/rclone_includes.R</code></a></small>
       <div class="d-none name"><code>rclone_includes.Rd</code></div>
     </div>
 
@@ -42,11 +42,7 @@ in Rclone when uploading snapshots.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">rclone_includes</span><span class="op">(</span></span>
-<span>  <span class="va">path_staging</span>,</span>
-<span>  repo_staging <span class="op">=</span> <span class="st">"https://staging.r-multiverse.org"</span>,</span>
-<span>  mock <span class="op">=</span> <span class="cn">NULL</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">rclone_includes</span><span class="op">(</span><span class="va">path_staging</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -56,15 +52,6 @@ in Rclone when uploading snapshots.</p>
 <dl><dt id="arg-path-staging">path_staging<a class="anchor" aria-label="anchor" href="#arg-path-staging"></a></dt>
 <dd><p>Character string, directory path to the source
 files of the Staging universe.</p></dd>
-
-
-<dt id="arg-repo-staging">repo_staging<a class="anchor" aria-label="anchor" href="#arg-repo-staging"></a></dt>
-<dd><p>Character string, URL of the Staging universe.</p></dd>
-
-
-<dt id="arg-mock">mock<a class="anchor" aria-label="anchor" href="#arg-mock"></a></dt>
-<dd><p>For testing purposes only, a named list of data frames
-for inputs to various intermediate functions.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -82,14 +69,8 @@ for inputs to various intermediate functions.</p></dd>
 <span class="r-in"><span><span class="va">path_staging</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">path_community</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">gert</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/gert/reference/git_fetch.html" class="external-link">git_clone</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">url_staging</span>, path <span class="op">=</span> <span class="va">path_staging</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="stage_candidates.html">stage_candidates</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>  path_staging <span class="op">=</span> <span class="va">path_staging</span>,</span></span>
-<span class="r-in"><span>  repo_staging <span class="op">=</span> <span class="st">"https://staging.r-multiverse.org"</span></span></span>
-<span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">rclone_includes</span><span class="op">(</span></span></span>
-<span class="r-in"><span>  <span class="va">path_staging</span>,</span></span>
-<span class="r-in"><span>  repo_staging <span class="op">=</span> <span class="st">"https://staging.r-multiverse.org"</span></span></span>
-<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="stage_candidates.html">stage_candidates</a></span><span class="op">(</span>path_staging <span class="op">=</span> <span class="va">path_staging</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">rclone_includes</span><span class="op">(</span><span class="va">path_staging</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
