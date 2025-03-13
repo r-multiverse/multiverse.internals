@@ -9,7 +9,7 @@ and their hashes."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ and their hashes."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Record the manifest of package versions.</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.4.10/R/record_versions.R" class="external-link"><code>R/record_versions.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/record_versions.R" class="external-link"><code>R/record_versions.R</code></a></small>
       <div class="d-none name"><code>record_versions.Rd</code></div>
     </div>
 
@@ -70,30 +70,29 @@ in <code>repo</code>. This argument is exposed for testing only.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p><code>NULL</code> (invisibly). Writes a package version manifest
-and a manifest of version issues as JSON files.</p>
+    <p><code>NULL</code> (invisibly). Writes version information to a JSON file.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>This function tracks a manifest containing the current version,
 the current hash, the highest version ever released, and
 the hash of the highest version ever released.
-<code><a href="issues_versions.html">issues_versions()</a></code> uses this information
+<code><a href="status_versions.html">status_versions()</a></code> uses this information
 to determine whether the package complies with best
 practices for version numbers.</p>
     </div>
     <div class="section level2">
-    <h2 id="package-issues">Package issues<a class="anchor" aria-label="anchor" href="#package-issues"></a></h2>
+    <h2 id="package-status">Package status<a class="anchor" aria-label="anchor" href="#package-status"></a></h2>
 
 
-<p>Functions like <code><a href="issues_versions.html">issues_versions()</a></code> and <code><a href="issues_descriptions.html">issues_descriptions()</a></code>
+<p>Functions like <code><a href="status_versions.html">status_versions()</a></code> and <code><a href="status_descriptions.html">status_descriptions()</a></code>
 perform health checks for all packages in R-multiverse.
 For a complete list of checks, see
-the <code>issues_*()</code> functions listed at
+the <code>status_*()</code> functions listed at
 <a href="https://r-multiverse.org/multiverse.internals/reference/index.html">https://r-multiverse.org/multiverse.internals/reference/index.html</a>.
 <code>record_versions()</code> updates the version number history
-of releases in R-multiverse, and <code><a href="record_issues.html">record_issues()</a></code> gathers
-together all the issues about R-multiverse packages.</p>
+of releases in R-multiverse, and <code><a href="record_status.html">record_status()</a></code> gathers
+together all the status about R-multiverse packages.</p>
     </div>
 
     <div class="section level2">
@@ -132,7 +131,7 @@ together all the issues about R-multiverse packages.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [22] "  {"                                                               </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [23] "    \"package\": \"mirai\","                                       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [24] "    \"version_current\": \"2.1.0.9001\","                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "    \"hash_current\": \"8747429e052e3901dec27f0c2544d6556c297e87\""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "    \"hash_current\": \"1511b02838f6ece3454ed9f136411e6f4c3d59a7\""</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [26] "  },"                                                              </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [27] "  {"                                                               </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [28] "    \"package\": \"nanonext\","                                    </span>
@@ -178,9 +177,9 @@ together all the issues about R-multiverse packages.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [30] "  {"                                                                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [31] "    \"package\": \"mirai\","                                        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [32] "    \"version_current\": \"2.1.0.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "    \"hash_current\": \"8747429e052e3901dec27f0c2544d6556c297e87\","</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "    \"hash_current\": \"1511b02838f6ece3454ed9f136411e6f4c3d59a7\","</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [34] "    \"version_highest\": \"2.1.0.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [35] "    \"hash_highest\": \"8747429e052e3901dec27f0c2544d6556c297e87\"" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [35] "    \"hash_highest\": \"1511b02838f6ece3454ed9f136411e6f4c3d59a7\"" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [36] "  },"                                                               </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [37] "  {"                                                                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [38] "    \"package\": \"nanonext\","                                     </span>

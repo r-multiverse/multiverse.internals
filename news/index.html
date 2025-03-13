@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +29,14 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.4.10/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.0.0" id="multiverseinternals-100">multiverse.internals 1.0.0<a class="anchor" aria-label="anchor" href="#multiverseinternals-100"></a></h2>
+<ul><li>Rename “issues” to “status” throughout the package, including in function names.</li>
+<li>Notably, rename <code>issue.json</code> to <code>status.json</code>.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.4.10" id="multiverseinternals-0410">multiverse.internals 0.4.10<a class="anchor" aria-label="anchor" href="#multiverseinternals-0410"></a></h2>
 <ul><li>Simplify <code><a href="../reference/stage_candidates.html">stage_candidates()</a></code>, <code><a href="../reference/rclone_includes.html">rclone_includes()</a></code>, and <code><a href="../reference/update_status.html">update_status()</a></code>: get remote hashes from pre-recorded <code>issues.json</code>, as opposed to a separate call to <code><a href="../reference/meta_packages.html">meta_packages()</a></code>. This ensures those remote hashes are more contemporaneous with the corresponding reported check results.</li>
@@ -87,7 +92,7 @@
 <ul><li>Organize R version and snapshot/staging date information more neatly in <code>meta.json</code>.</li>
 <li>Use the new <code>skip_packages</code> parameter in the R-universe snapshot API.</li>
 <li>Disallow packages to enter or leave the Staging universe <code>packages.json</code> during the Staging period.</li>
-<li>Record healthy packages in <code><a href="../reference/record_issues.html">record_issues()</a></code> to support the above.</li>
+<li>Record healthy packages in <code>record_issues()</code> to support the above.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.9" id="multiverseinternals-039">multiverse.internals 0.3.9<a class="anchor" aria-label="anchor" href="#multiverseinternals-039"></a></h2>
@@ -151,7 +156,7 @@
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.19" id="multiverseinternals-0219">multiverse.internals 0.2.19<a class="anchor" aria-label="anchor" href="#multiverseinternals-0219"></a></h2>
-<ul><li>Fix help file examples of <code><a href="../reference/record_issues.html">record_issues()</a></code>.</li>
+<ul><li>Fix help file examples of <code>record_issues()</code>.</li>
 <li>Link to RSS feed from status page.</li>
 </ul></div>
     <div class="section level2">
@@ -214,11 +219,11 @@
 <h2 class="pkg-version" data-toc-text="0.2.4" id="multiverseinternals-024">multiverse.internals 0.2.4<a class="anchor" aria-label="anchor" href="#multiverseinternals-024"></a></h2>
 <ul><li>Updates R-Multiverse repository to <code>community.r-multiverse.org</code>.</li>
 <li>Makes <code><a href="../reference/meta_checks.html">meta_checks()</a></code> and <code><a href="../reference/meta_packages.html">meta_packages()</a></code> robust to trailing slashes in the supplied URL.</li>
-<li>Repair <code><a href="../reference/issues_dependencies.html">issues_dependencies()</a></code> for empty graphs.</li>
+<li>Repair <code>issues_dependencies()</code> for empty graphs.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.2" id="multiverseinternals-022">multiverse.internals 0.2.2<a class="anchor" aria-label="anchor" href="#multiverseinternals-022"></a></h2>
-<ul><li>Add <code><a href="../reference/issues_dependencies.html">issues_dependencies()</a></code>.</li>
+<ul><li>Add <code>issues_dependencies()</code>.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.1" id="multiverseinternals-021">multiverse.internals 0.2.1<a class="anchor" aria-label="anchor" href="#multiverseinternals-021"></a></h2>
@@ -226,14 +231,14 @@
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.0" id="multiverseinternals-020">multiverse.internals 0.2.0<a class="anchor" aria-label="anchor" href="#multiverseinternals-020"></a></h2>
-<ul><li>Add more checks to <code><a href="../reference/record_issues.html">record_issues()</a></code>: results from the R-universe check API, plus specific results from package <code>DESCRIPTION</code> files.</li>
+<ul><li>Add more checks to <code>record_issues()</code>: results from the R-universe check API, plus specific results from package <code>DESCRIPTION</code> files.</li>
 <li>Refactor and document specific checks in <code>check_checks()</code>, <code>check_descriptions()</code>, and <code>check_versions()</code>.</li>
 <li>Add a <code>pkgdown</code> website.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.4" id="multiverseinternals-014">multiverse.internals 0.1.4<a class="anchor" aria-label="anchor" href="#multiverseinternals-014"></a></h2>
 <ul><li>Do not write <code>version_issues.json</code> from <code><a href="../reference/record_versions.html">record_versions()</a></code>.</li>
-<li>Record version issues in separate JSON files in a new <code><a href="../reference/record_issues.html">record_issues()</a></code> function. Going forward, this function will also write R-universe check results in those individual package-specific files.</li>
+<li>Record version issues in separate JSON files in a new <code>record_issues()</code> function. Going forward, this function will also write R-universe check results in those individual package-specific files.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.3" id="multiverseinternals-013">multiverse.internals 0.1.3<a class="anchor" aria-label="anchor" href="#multiverseinternals-013"></a></h2>
