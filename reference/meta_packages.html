@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.6</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>List package metadata</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/1.0.5/R/meta_packages.R" class="external-link"><code>R/meta_packages.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/meta_packages.R" class="external-link"><code>R/meta_packages.R</code></a></small>
       <div class="d-none name"><code>meta_packages.Rd</code></div>
     </div>
 
@@ -41,7 +41,7 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">meta_packages</span><span class="op">(</span></span>
 <span>  repo <span class="op">=</span> <span class="st">"https://community.r-multiverse.org"</span>,</span>
-<span>  fields <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Version"</span>, <span class="st">"License"</span>, <span class="st">"Remotes"</span>, <span class="st">"RemoteSha"</span><span class="op">)</span></span>
+<span>  fields <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Version"</span>, <span class="st">"License"</span>, <span class="st">"Remotes"</span>, <span class="st">"RemoteSha"</span>, <span class="st">"_published"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -83,35 +83,42 @@ R-multiverse staging period.</p></li>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">meta_packages</span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"https://wlandau.r-universe.dev"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          package                      _id    version            license</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     autometric 67ac192d4083faa45638ecac 0.1.2.9000 MIT + file LICENSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          package                       id    version            license</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     autometric 67d3a31dd1c8653be1af2109 0.1.2.9000 MIT + file LICENSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2           crew 67cd2fb6d1c8653be1a2a4cd 1.0.0.9001 MIT + file LICENSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 crew.aws.batch 67ca9744d1c8653be19e7c9f      0.0.8 MIT + file LICENSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4   crew.cluster 67ca931cd1c8653be19e607f 0.3.4.9000 MIT + file LICENSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5          mirai 67d2f892d1c8653be1ae468d 2.1.0.9001         GPL (&gt;= 3)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5          mirai 67d42124d1c8653be1b0bf2c 2.1.0.9001         GPL (&gt;= 3)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6       nanonext 67d0c599d1c8653be1a94543 1.5.1.9001         GPL (&gt;= 3)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                  remotesha needscompilation</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 13ec8d2cfba955081cf3e19eb5e74af07ba89bef              yes</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 7d460e26f4c45233bee15ff4db9564503ec4b21a               no</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 136fedb9df30123b7c216ac75a66f29e8e94f2c1               no</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 f9ecd38a1b8736157b06635f5e0cb43cb80c09a4               no</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 4bd16c5de18a42f1472ad4257866b4785bdf5166               no</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 14600e4dda1dfc1d9e833085a8e1d203e2e948a1               no</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 77b1cac28f96ab4f48007f37d0a2de1f8a1357ad              yes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             md5sum _type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 af8b02ad07b6ca96b952ccd662061b87   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 f73b0148ae622e7b076c4a4bd7671fb6   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 6e791b49bfe825d5472297326e42762a   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 4f0769a5fffd5c239f57dfc85b622e7a   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 1b111619dd374f4571c36e4383834722   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 7e84946466b83d3f0e76c40acce02989   src</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                            _fileid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 67c829a5a8577aae969e94da76b29bd44e40f0c73ea93eae824eb1cbfaf93973</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                             md5sum type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 ef96d0557ec4e3233ef9650978d99e19  src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 f73b0148ae622e7b076c4a4bd7671fb6  src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 6e791b49bfe825d5472297326e42762a  src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 4f0769a5fffd5c239f57dfc85b622e7a  src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 3e08fe0a0c37442da9337b321c275e84  src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 7e84946466b83d3f0e76c40acce02989  src</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                             fileid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 b82db8987749809ad8520577887ac015c298cd9a5d4321c2e6c2c7f412909752</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 af4668b170f0df86e99ad23aa29b803bbba4d54e053768b87c09e8df04a63b68</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 8302d7f626617fde57c53fa0e2eafb295a2492279875e547f94a1c501b5c18e1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 48cb4b7c5616fb9072a479a9d8094f198b191aa1cff2a94564084128c53169b1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 d06105a53defd2a5c5674f9c692b72d075bc81a13a7793e7240d3c11f8cffa4a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 34927c65e76bfa63d147b2e18191dbc97bae2406ceafa67c847f55024b50d60c</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 5170960f5f081b8ffc726b7a096eb4f76f457327d6792a0879312f88c654ff70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         _dependencies</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                     published</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2025-03-14 03:31:41.816 UTC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2025-03-09 06:05:42.437 UTC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2025-03-07 06:50:43.973 UTC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2025-03-07 06:33:00.904 UTC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2025-03-14 12:29:24.595 UTC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2025-03-11 23:22:01.190 UTC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          dependencies</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                                                                                                                                                                                                                                                                                                                                                  R, graphics, utils, grDevices, ps, tinytest, &gt;= 3.5.0, NA, NA, NA, NA, NA, Depends, Imports, Imports, Suggests, Suggests, Suggests</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 R, cli, data.table, getip, later, mirai, nanonext, processx, promises, ps, R6, rlang, stats, tibble, tidyselect, tools, utils, autometric, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 3.1.0, NA, NA, NA, &gt;= 2.0.1, &gt;= 1.4.0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, &gt;= 0.1.0, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests, Suggests</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                                                                                                                       R, cli, crew, paws.common, paws.compute, paws.management, R6, rlang, tibble, utils, knitr, markdown, rmarkdown, testthat, &gt;= 4.0.0, &gt;= 3.1.0, &gt;= 1.0.0, &gt;= 0.7.0, NA, NA, NA, NA, NA, NA, &gt;= 1.30, &gt;= 1.1, &gt;= 2.4, &gt;= 3.0.0, Depends, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Imports, Suggests, Suggests, Suggests, Suggests</span>
@@ -119,18 +126,18 @@ R-multiverse staging period.</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                                                                                                                                                                                                                                                                                                                                          R, nanonext, cli, litedown, parallel, promises, &gt;= 3.6, &gt;= 1.5.0, NA, NA, NA, NA, Depends, Imports, Suggests, Suggests, Enhances, Enhances</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                                                                                                                                                                                                                                                                                                                                                                                                             R, later, litedown, promises, &gt;= 3.6, NA, NA, NA, Depends, Suggests, Suggests, Enhances</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   filesize distro</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   274721  noble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   274776  noble</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  1082732  noble</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3   571284  noble</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4   389621  noble</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   403346  noble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   403189  noble</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6  1030163  noble</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                             sha256 foss   cran</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 67c829a5a8577aae969e94da76b29bd44e40f0c73ea93eae824eb1cbfaf93973 TRUE  0.1.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 b82db8987749809ad8520577887ac015c298cd9a5d4321c2e6c2c7f412909752 TRUE  0.1.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 af4668b170f0df86e99ad23aa29b803bbba4d54e053768b87c09e8df04a63b68 TRUE 0.10.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 8302d7f626617fde57c53fa0e2eafb295a2492279875e547f94a1c501b5c18e1 TRUE  0.0.7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 48cb4b7c5616fb9072a479a9d8094f198b191aa1cff2a94564084128c53169b1 TRUE  0.3.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 d06105a53defd2a5c5674f9c692b72d075bc81a13a7793e7240d3c11f8cffa4a TRUE  2.0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 34927c65e76bfa63d147b2e18191dbc97bae2406ceafa67c847f55024b50d60c TRUE  2.0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 5170960f5f081b8ffc726b7a096eb4f76f457327d6792a0879312f88c654ff70 TRUE  1.4.0</span>
 </code></pre></div>
     </div>
