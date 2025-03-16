@@ -9,7 +9,7 @@ package-specific JSON files."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.8</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ package-specific JSON files."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Record package status.</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/1.0.7/R/record_status.R" class="external-link"><code>R/record_status.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/record_status.R" class="external-link"><code>R/record_status.R</code></a></small>
       <div class="d-none name"><code>record_status.Rd</code></div>
     </div>
 
@@ -56,8 +56,7 @@ package-specific JSON files.</p>
 
 
 <dl><dt id="arg-repo">repo<a class="anchor" aria-label="anchor" href="#arg-repo"></a></dt>
-<dd><p>Character of length 1, URL of the package repository.
-R-multiverse uses <code>"https://community.r-multiverse.org"</code>.</p></dd>
+<dd><p>URL of the repository to query.</p></dd>
 
 
 <dt id="arg-versions">versions<a class="anchor" aria-label="anchor" href="#arg-versions"></a></dt>
@@ -89,83 +88,32 @@ dependency status, <code>FALSE</code> otherwise.</p></dd>
     <h2 id="package-status">Package status<a class="anchor" aria-label="anchor" href="#package-status"></a></h2>
 
 
-<p>Functions like <code><a href="status_versions.html">status_versions()</a></code> and <code><a href="status_descriptions.html">status_descriptions()</a></code>
+<p>Functions like <code><a href="issues_versions.html">issues_versions()</a></code> and <code><a href="issues_r_cmd_check.html">issues_r_cmd_check()</a></code>
 perform health checks for all packages in R-multiverse.
 For a complete list of checks, see
-the <code>status_*()</code> functions listed at
+the <code>issues_*()</code> functions listed at
 <a href="https://r-multiverse.org/multiverse.internals/reference/index.html">https://r-multiverse.org/multiverse.internals/reference/index.html</a>.
 <code><a href="record_versions.html">record_versions()</a></code> updates the version number history
 of releases in R-multiverse, and <code>record_status()</code> gathers
 together all the status about R-multiverse packages.</p>
     </div>
-    <div class="section level2">
-    <h2 id="status-data">Status data<a class="anchor" aria-label="anchor" href="#status-data"></a></h2>
-
-
-<p>For each package with observed problems, <code>record_status()</code> writes
-a JSON list entry in the output JSON file
-with one element for each type of failing check.
-Each check-specific element has an informative name
-(for example, <code>checks</code>, <code>descriptions</code>, or <code>versions</code>)
-and a list of diagnostic information. In addition, there is a <code>date</code>
-field to indicate when an issue was first detected. The <code>date</code>
-automatically resets the next time all the status in the package
-are resolved.</p>
-    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">repo</span> <span class="op">&lt;-</span> <span class="st">"https://wlandau.r-universe.dev"</span></span></span>
-<span class="r-in"><span>  <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="va">versions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="record_versions.html">record_versions</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    versions <span class="op">=</span> <span class="va">versions</span>,</span></span>
-<span class="r-in"><span>    repo <span class="op">=</span> <span class="va">repo</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu">record_status</span><span class="op">(</span></span></span>
-<span class="r-in"><span>    repo <span class="op">=</span> <span class="va">repo</span>,</span></span>
-<span class="r-in"><span>    versions <span class="op">=</span> <span class="va">versions</span>,</span></span>
-<span class="r-in"><span>    output <span class="op">=</span> <span class="va">output</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/writeLines.html" class="external-link">writeLines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   "autometric": {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "success": [true],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "published": ["2025-03-14 03:31:41.816 UTC"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "version": ["0.1.2.9000"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "remote_hash": ["13ec8d2cfba955081cf3e19eb5e74af07ba89bef"]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   },</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   "crew": {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "success": [true],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "published": ["2025-03-09 06:05:42.437 UTC"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "version": ["1.0.0.9001"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "remote_hash": ["7d460e26f4c45233bee15ff4db9564503ec4b21a"]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   },</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   "crew.aws.batch": {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "success": [true],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "published": ["2025-03-07 06:50:43.973 UTC"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "version": ["0.0.8"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "remote_hash": ["136fedb9df30123b7c216ac75a66f29e8e94f2c1"]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   },</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   "crew.cluster": {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "success": [true],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "published": ["2025-03-07 06:33:00.904 UTC"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "version": ["0.3.4.9000"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "remote_hash": ["f9ecd38a1b8736157b06635f5e0cb43cb80c09a4"]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   },</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   "mirai": {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "success": [true],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "published": ["2025-03-14 12:29:24.595 UTC"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "version": ["2.1.0.9001"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "remote_hash": ["14600e4dda1dfc1d9e833085a8e1d203e2e948a1"]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   },</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   "nanonext": {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "success": [true],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "published": ["2025-03-11 23:22:01.190 UTC"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "version": ["1.5.1.9001"],</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "remote_hash": ["77b1cac28f96ab4f48007f37d0a2de1f8a1357ad"]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
+<span class="r-in"><span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">versions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="record_versions.html">record_versions</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  versions <span class="op">=</span> <span class="va">versions</span>,</span></span>
+<span class="r-in"><span>  repo <span class="op">=</span> <span class="va">repo</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">record_status</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  repo <span class="op">=</span> <span class="va">repo</span>,</span></span>
+<span class="r-in"><span>  versions <span class="op">=</span> <span class="va">versions</span>,</span></span>
+<span class="r-in"><span>  output <span class="op">=</span> <span class="va">output</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html" class="external-link">writeLines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

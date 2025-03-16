@@ -9,7 +9,7 @@ and their hashes."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.8</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ and their hashes."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Record the manifest of package versions.</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/1.0.7/R/record_versions.R" class="external-link"><code>R/record_versions.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/record_versions.R" class="external-link"><code>R/record_versions.R</code></a></small>
       <div class="d-none name"><code>record_versions.Rd</code></div>
     </div>
 
@@ -59,8 +59,7 @@ tracking the history of released versions of packages.</p></dd>
 
 
 <dt id="arg-repo">repo<a class="anchor" aria-label="anchor" href="#arg-repo"></a></dt>
-<dd><p>Character of length 1, URL of the package repository.
-R-multiverse uses <code>"https://community.r-multiverse.org"</code>.</p></dd>
+<dd><p>URL of the repository to query.</p></dd>
 
 
 <dt id="arg-current">current<a class="anchor" aria-label="anchor" href="#arg-current"></a></dt>
@@ -77,7 +76,7 @@ in <code>repo</code>. This argument is exposed for testing only.</p></dd>
     <p>This function tracks a manifest containing the current version,
 the current hash, the highest version ever released, and
 the hash of the highest version ever released.
-<code><a href="status_versions.html">status_versions()</a></code> uses this information
+<code><a href="issues_versions.html">issues_versions()</a></code> uses this information
 to determine whether the package complies with best
 practices for version numbers.</p>
     </div>
@@ -85,10 +84,10 @@ practices for version numbers.</p>
     <h2 id="package-status">Package status<a class="anchor" aria-label="anchor" href="#package-status"></a></h2>
 
 
-<p>Functions like <code><a href="status_versions.html">status_versions()</a></code> and <code><a href="status_descriptions.html">status_descriptions()</a></code>
+<p>Functions like <code><a href="issues_versions.html">issues_versions()</a></code> and <code><a href="issues_r_cmd_check.html">issues_r_cmd_check()</a></code>
 perform health checks for all packages in R-multiverse.
 For a complete list of checks, see
-the <code>status_*()</code> functions listed at
+the <code>issues_*()</code> functions listed at
 <a href="https://r-multiverse.org/multiverse.internals/reference/index.html">https://r-multiverse.org/multiverse.internals/reference/index.html</a>.
 <code>record_versions()</code> updates the version number history
 of releases in R-multiverse, and <code><a href="record_status.html">record_status()</a></code> gathers
@@ -97,98 +96,22 @@ together all the status about R-multiverse packages.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co"># R-multiverse uses https://community.r-multiverse.org as the repo.</span></span></span>
-<span class="r-in"><span>  <span class="va">repo</span> <span class="op">&lt;-</span> <span class="st">"https://wlandau.r-universe.dev"</span> <span class="co"># just for testing and examples</span></span></span>
-<span class="r-in"><span>  <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="va">versions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="co"># First snapshot:</span></span></span>
-<span class="r-in"><span>  <span class="fu">record_versions</span><span class="op">(</span></span></span>
-<span class="r-in"><span>    versions <span class="op">=</span> <span class="va">versions</span>,</span></span>
-<span class="r-in"><span>    repo <span class="op">=</span> <span class="va">repo</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">versions</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "["                                                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [2] "  {"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "    \"package\": \"autometric\","                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "    \"version_current\": \"0.1.2.9000\","                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "    \"hash_current\": \"13ec8d2cfba955081cf3e19eb5e74af07ba89bef\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "  },"                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "  {"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] "    \"package\": \"crew\","                                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "    \"version_current\": \"1.0.0.9001\","                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "    \"hash_current\": \"7d460e26f4c45233bee15ff4db9564503ec4b21a\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "  },"                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [12] "  {"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "    \"package\": \"crew.aws.batch\","                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [14] "    \"version_current\": \"0.0.8\","                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [15] "    \"hash_current\": \"136fedb9df30123b7c216ac75a66f29e8e94f2c1\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "  },"                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [17] "  {"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [18] "    \"package\": \"crew.cluster\","                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [19] "    \"version_current\": \"0.3.4.9000\","                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [20] "    \"hash_current\": \"f9ecd38a1b8736157b06635f5e0cb43cb80c09a4\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "  },"                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [22] "  {"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [23] "    \"package\": \"mirai\","                                       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [24] "    \"version_current\": \"2.1.0.9001\","                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "    \"hash_current\": \"14600e4dda1dfc1d9e833085a8e1d203e2e948a1\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [26] "  },"                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [27] "  {"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [28] "    \"package\": \"nanonext\","                                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [29] "    \"version_current\": \"1.5.1.9001\","                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [30] "    \"hash_current\": \"77b1cac28f96ab4f48007f37d0a2de1f8a1357ad\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "  }"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [32] "]"                                                                 </span>
-<span class="r-in"><span>  <span class="co"># In subsequent snapshots, we have historical information about versions.</span></span></span>
-<span class="r-in"><span>  <span class="fu">record_versions</span><span class="op">(</span></span></span>
-<span class="r-in"><span>    versions <span class="op">=</span> <span class="va">versions</span>,</span></span>
-<span class="r-in"><span>    repo <span class="op">=</span> <span class="va">repo</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">versions</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "["                                                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [2] "  {"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "    \"package\": \"autometric\","                                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "    \"version_current\": \"0.1.2.9000\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "    \"hash_current\": \"13ec8d2cfba955081cf3e19eb5e74af07ba89bef\","</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "    \"version_highest\": \"0.1.2.9000\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "    \"hash_highest\": \"13ec8d2cfba955081cf3e19eb5e74af07ba89bef\"" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] "  },"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "  {"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "    \"package\": \"crew\","                                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "    \"version_current\": \"1.0.0.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [12] "    \"hash_current\": \"7d460e26f4c45233bee15ff4db9564503ec4b21a\","</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "    \"version_highest\": \"1.0.0.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [14] "    \"hash_highest\": \"7d460e26f4c45233bee15ff4db9564503ec4b21a\"" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [15] "  },"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "  {"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [17] "    \"package\": \"crew.aws.batch\","                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [18] "    \"version_current\": \"0.0.8\","                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [19] "    \"hash_current\": \"136fedb9df30123b7c216ac75a66f29e8e94f2c1\","</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [20] "    \"version_highest\": \"0.0.8\","                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "    \"hash_highest\": \"136fedb9df30123b7c216ac75a66f29e8e94f2c1\"" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [22] "  },"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [23] "  {"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [24] "    \"package\": \"crew.cluster\","                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "    \"version_current\": \"0.3.4.9000\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [26] "    \"hash_current\": \"f9ecd38a1b8736157b06635f5e0cb43cb80c09a4\","</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [27] "    \"version_highest\": \"0.3.4.9000\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [28] "    \"hash_highest\": \"f9ecd38a1b8736157b06635f5e0cb43cb80c09a4\"" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [29] "  },"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [30] "  {"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "    \"package\": \"mirai\","                                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [32] "    \"version_current\": \"2.1.0.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "    \"hash_current\": \"14600e4dda1dfc1d9e833085a8e1d203e2e948a1\","</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [34] "    \"version_highest\": \"2.1.0.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [35] "    \"hash_highest\": \"14600e4dda1dfc1d9e833085a8e1d203e2e948a1\"" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [36] "  },"                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [37] "  {"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [38] "    \"package\": \"nanonext\","                                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [39] "    \"version_current\": \"1.5.1.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [40] "    \"hash_current\": \"77b1cac28f96ab4f48007f37d0a2de1f8a1357ad\","</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "    \"version_highest\": \"1.5.1.9001\","                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [42] "    \"hash_highest\": \"77b1cac28f96ab4f48007f37d0a2de1f8a1357ad\"" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [43] "  }"                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [44] "]"                                                                  </span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
+<span class="r-in"><span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">versions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># First snapshot:</span></span></span>
+<span class="r-in"><span><span class="fu">record_versions</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  versions <span class="op">=</span> <span class="va">versions</span>,</span></span>
+<span class="r-in"><span>  repo <span class="op">=</span> <span class="va">repo</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">versions</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># In subsequent snapshots, we have historical information about versions.</span></span></span>
+<span class="r-in"><span><span class="fu">record_versions</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  versions <span class="op">=</span> <span class="va">versions</span>,</span></span>
+<span class="r-in"><span>  repo <span class="op">=</span> <span class="va">repo</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">versions</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

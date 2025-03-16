@@ -13,7 +13,7 @@ the explicit mentions in the DESCRIPTION file."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.8</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@ the explicit mentions in the DESCRIPTION file."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Report package dependency issues</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/0.4.10/R/issues_dependencies.R" class="external-link"><code>R/issues_dependencies.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/issues_dependencies.R" class="external-link"><code>R/issues_dependencies.R</code></a></small>
       <div class="d-none name"><code>issues_dependencies.Rd</code></div>
     </div>
 
@@ -60,117 +60,58 @@ the explicit mentions in the <code>DESCRIPTION</code> file.</p>
 
 
 <dt id="arg-meta">meta<a class="anchor" aria-label="anchor" href="#arg-meta"></a></dt>
-<dd><p>A data frame with R-universe package check results
-returned by <code><a href="meta_checks.html">meta_checks()</a></code>.</p></dd>
+<dd><p>Package metadata from <code><a href="meta_packages.html">meta_packages()</a></code>.</p></dd>
 
 
 <dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
-<dd><p><code>TRUE</code> to print progress while checking issues with
-dependencies, <code>FALSE</code> otherwise.</p></dd>
+<dd><p><code>TRUE</code> to print progress while checking
+dependency status, <code>FALSE</code> otherwise.</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A nested list of problems triggered by dependencies.
-The names of top-level elements are packages affected downstream.
-The value of each top-level element is a list whose names are
-Each element of this inner list is a character
-vector of relevant dependencies of the downstream package.</p>
-<p>For example, consider a linear dependency graph where <code>crew.cluster</code>
-depends on <code>crew</code>, <code>crew</code> depends on <code>mirai</code>, and
-<code>mirai</code> depends on <code>nanonext</code>. We represent the graph like this:
-<code>nanonext -&gt; mirai -&gt; crew -&gt; crew.cluster</code>.
-If <code>nanonext</code> has an issue, then <code>issues_dependencies()</code> returns
-<code>list(crew.cluster = list(nanonext = "crew"), ...)</code>, where <code>...</code>
-stands for additional named list entries. From this list, we deduce
-that <code>nanonext</code> is causing an issue affecting <code>crew.cluster</code> through
-the direct dependency on <code>crew</code>.</p>
-<p>The choice in output format from <code>issues_dependencies()</code> allows package
-maintainers to more easily figure out which direct dependencies
-are contributing issues and drop those direct dependencies if necessary.</p>
-    </div>
-    <div class="section level2">
-    <h2 id="package-issues">Package issues<a class="anchor" aria-label="anchor" href="#package-issues"></a></h2>
-
-
-<p>Functions like <code><a href="issues_versions.html">issues_versions()</a></code> and <code><a href="issues_descriptions.html">issues_descriptions()</a></code>
-perform health checks for all packages in R-multiverse.
-For a complete list of checks, see
-the <code>issues_*()</code> functions listed at
-<a href="https://r-multiverse.org/multiverse.internals/reference/index.html">https://r-multiverse.org/multiverse.internals/reference/index.html</a>.
-<code><a href="record_versions.html">record_versions()</a></code> updates the version number history
-of releases in R-multiverse, and <code><a href="record_issues.html">record_issues()</a></code> gathers
-together all the issues about R-multiverse packages.</p>
+    <p>A data frame with one row for each package impacted by
+upstream dependencies.
+Each element of the <code>dependencies</code> column is a
+nested list describing the problems upstream.</p>
+<p>To illustrate the structure of this list, suppose
+Package <code>tarchetypes</code> depends on package <code>targets</code>, and packages
+<code>jagstargets</code> and <code>stantargets</code> depend on <code>tarchetypes</code>.
+In addition, package <code>targets</code> has a problem in <code>R CMD check</code>
+which might cause problems in <code>tarchetypes</code> and packages downstream.</p>
+<p><code>status_dependencies()</code> represents this information in the
+following list:</p>
+<p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="at">jagstargets =</span> <span class="fu">list</span>(<span class="at">targets =</span> <span class="st">"tarchetypes"</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  <span class="at">tarchetypes =</span> <span class="fu">list</span>(<span class="at">targets =</span> <span class="fu">character</span>(<span class="dv">0</span>)),</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  <span class="at">stantargets =</span> <span class="fu">list</span>(<span class="at">targets =</span> <span class="st">"tarchetypes"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>)</span></code></pre><p></p></div>
+<p>In general, the returned list is of the form:</p>
+<p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="at">impacted_reverse_dependency =</span> <span class="fu">list</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="at">upstream_culprit =</span> <span class="fu">c</span>(<span class="st">"direct_dependency_1"</span>, <span class="st">"direct_dependency_2"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  )</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>)</span></code></pre><p></p></div>
+<p>where <code>upstream_culprit</code> causes problems in <code>impacted_reverse_dependency</code>
+through direct dependencies <code>direct_dependency_1</code> and
+<code>direct_dependency_2</code>.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other issues:
-<code><a href="issues_checks.html">issues_checks</a>()</code>,
-<code><a href="issues_descriptions.html">issues_descriptions</a>()</code>,
+<code><a href="issues_advisories.html">issues_advisories</a>()</code>,
+<code><a href="issues_licenses.html">issues_licenses</a>()</code>,
+<code><a href="issues_r_cmd_check.html">issues_r_cmd_check</a>()</code>,
+<code><a href="issues_remotes.html">issues_remotes</a>()</code>,
+<code><a href="issues_version_conflicts.html">issues_version_conflicts</a>()</code>,
 <code><a href="issues_versions.html">issues_versions</a>()</code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="meta_packages.html">meta_packages</a></span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"https://wlandau.r-universe.dev"</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu">issues_dependencies</span><span class="op">(</span>packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="fl">0L</span><span class="op">)</span>, meta <span class="op">=</span> <span class="va">meta</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
-<span class="r-in"><span>  <span class="fu">issues_dependencies</span><span class="op">(</span>packages <span class="op">=</span> <span class="st">"crew.aws.batch"</span>, meta <span class="op">=</span> <span class="va">meta</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
-<span class="r-in"><span>  <span class="fu">issues_dependencies</span><span class="op">(</span>packages <span class="op">=</span> <span class="st">"nanonext"</span>, meta <span class="op">=</span> <span class="va">meta</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $mirai</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $mirai$nanonext</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew$nanonext</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "mirai"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.aws.batch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.aws.batch$nanonext</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "crew"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.cluster</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.cluster$nanonext</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "crew"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"><span>  <span class="fu">issues_dependencies</span><span class="op">(</span>packages <span class="op">=</span> <span class="st">"crew"</span>, meta <span class="op">=</span> <span class="va">meta</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.aws.batch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.aws.batch$crew</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.cluster</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.cluster$crew</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"><span>  <span class="fu">issues_dependencies</span><span class="op">(</span>packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"crew"</span>, <span class="st">"mirai"</span><span class="op">)</span>, meta <span class="op">=</span> <span class="va">meta</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.aws.batch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.aws.batch$crew</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.aws.batch$mirai</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "crew"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.cluster</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.cluster$crew</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew.cluster$mirai</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "crew"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $crew$mirai</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
+<span class="r-in"><span><span class="fu">issues_dependencies</span><span class="op">(</span>packages <span class="op">=</span> <span class="st">"targets"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
