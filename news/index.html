@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.8</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.9</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +29,15 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/1.0.8/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.0.9" id="multiverseinternals-109">multiverse.internals 1.0.9<a class="anchor" aria-label="anchor" href="#multiverseinternals-109"></a></h2>
+<ul><li>Use <code><a href="https://rdrr.io/r/tools/licensetools.html" class="external-link">tools::analyze_license()</a></code> to determine if a package in a registration request has an open-source license. This is much more consistent and reliable than checking a manual list of license specification strings.</li>
+<li>Fix <code><a href="../reference/meta_snapshot.html">meta_snapshot()</a></code> tests (check against the correct versions of R for the year 2025).</li>
+<li>Fix <code><a href="../reference/rclone_includes.html">rclone_includes()</a></code> tests: use the upcoming snapshot R version.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.0.8" id="multiverseinternals-108">multiverse.internals 1.0.8<a class="anchor" aria-label="anchor" href="#multiverseinternals-108"></a></h2>
 <ul><li>Subsume <code>meta_checks()</code> into <code><a href="../reference/meta_packages.html">meta_packages()</a></code>.</li>
