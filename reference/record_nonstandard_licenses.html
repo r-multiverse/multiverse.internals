@@ -17,7 +17,7 @@ licenses."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">multiverse.internals</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.11</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.12</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@ licenses."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Record nonstandard licenses</h1>
-      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/1.0.11/R/record_nonstandard_licenses.R" class="external-link"><code>R/record_nonstandard_licenses.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-multiverse/multiverse.internals/blob/main/R/record_nonstandard_licenses.R" class="external-link"><code>R/record_nonstandard_licenses.R</code></a></small>
       <div class="d-none name"><code>record_nonstandard_licenses.Rd</code></div>
     </div>
 
@@ -55,8 +55,8 @@ licenses.</p>
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">record_nonstandard_licenses</span><span class="op">(</span></span>
-<span>  repo <span class="op">=</span> <span class="st">"https://community.r-multiverse.org"</span>,</span>
-<span>  path <span class="op">=</span> <span class="st">"nonstandard_licenses.json"</span></span>
+<span>  path_status <span class="op">=</span> <span class="st">"status.json"</span>,</span>
+<span>  path_nonstandard_licenses <span class="op">=</span> <span class="st">"nonstandard_licenses.json"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -64,12 +64,14 @@ licenses.</p>
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg-repo">repo<a class="anchor" aria-label="anchor" href="#arg-repo"></a></dt>
-<dd><p>Character string, URL of the repository.</p></dd>
+<dl><dt id="arg-path-status">path_status<a class="anchor" aria-label="anchor" href="#arg-path-status"></a></dt>
+<dd><p>Character string, local path to the <code>status.json</code> file
+of the repository.</p></dd>
 
 
-<dt id="arg-path">path<a class="anchor" aria-label="anchor" href="#arg-path"></a></dt>
-<dd><p>Character string, output path to write JSON data with the names
+<dt id="arg-path-nonstandard-licenses">path_nonstandard_licenses<a class="anchor" aria-label="anchor" href="#arg-path-nonstandard-licenses"></a></dt>
+<dd><p>Character string,
+output path to write JSON data with the names
 and licenses of packages with non-standard licenses.</p></dd>
 
 </dl></div>
