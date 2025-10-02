@@ -7,7 +7,6 @@
 <url><loc>https://r-multiverse.org/multiverse.internals/news/index.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/aggregate_contributions.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/assert_cran_url.html</loc></url>
-<url><loc>https://r-multiverse.org/multiverse.internals/reference/assert_package.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/assert_package_description.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/assert_release_exists.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/filter_meta.html</loc></url>
@@ -33,6 +32,8 @@
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/record_nonstandard_licenses.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/record_status.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/record_versions.html</loc></url>
+<url><loc>https://r-multiverse.org/multiverse.internals/reference/review_license.html</loc></url>
+<url><loc>https://r-multiverse.org/multiverse.internals/reference/review_package.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/review_pull_request.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/review_pull_requests.html</loc></url>
 <url><loc>https://r-multiverse.org/multiverse.internals/reference/stage_candidates.html</loc></url>
