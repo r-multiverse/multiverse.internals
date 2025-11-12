@@ -35,7 +35,9 @@ issues_synchronization <- function(meta = meta_packages(), verbose = FALSE) {
 
 issues_synchronization_recent <- function(meta) {
   now <- format_time_stamp(Sys.time())
-  package <- meta$package[difftime(now, meta$published, units = "mins") < 5]
+  is_recent <- !is.na(meta$published) &
+    difftime(now, meta$published, units = "mins") < 5
+  package <- meta$package[is_recent]
   data.frame(
     package = package,
     synchronization = rep("recent", length(package))
