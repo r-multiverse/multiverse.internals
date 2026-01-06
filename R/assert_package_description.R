@@ -1,12 +1,13 @@
 #' @title Assert package `DESCRIPTION`
 #' @keywords internal
-#' @description Run basic assertions on the `DESCRIPTION` file of a package
-#'   on GitHub or GitLab.
+#' @description Run basic assertions on the `DESCRIPTION` file of a potential
+#'   package contribution.
 #' @return A character string with an informative message if a problem
 #'   was found. Otherwise, `NULL` if there are no issues.
 #' @param name Character string, name of the package listing contribution
 #'   to R-multiverse.
-#' @param url Character string, URL of the package on GitHub or GitLab.
+#' @param url Character string, URL of the package on a supported
+#'   source code repository.
 assert_package_description <- function(name, url) {
   text <- try(get_repo_file(url, "DESCRIPTION"), silent = TRUE)
   if (inherits(text, "try-error")) {

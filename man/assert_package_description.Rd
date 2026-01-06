@@ -10,14 +10,15 @@ assert_package_description(name, url)
 \item{name}{Character string, name of the package listing contribution
 to R-multiverse.}
 
-\item{url}{Character string, URL of the package on GitHub or GitLab.}
+\item{url}{Character string, URL of the package on a supported
+source code repository.}
 }
 \value{
 A character string with an informative message if a problem
 was found. Otherwise, \code{NULL} if there are no issues.
 }
 \description{
-Run basic assertions on the \code{DESCRIPTION} file of a package
-on GitHub or GitLab.
+Run basic assertions on the \code{DESCRIPTION} file of a potential
+package contribution.
 }
 \keyword{internal}

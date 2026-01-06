@@ -7,7 +7,7 @@
 #'   Packages that pass R-multiverse checks are frozen
 #'   (not allowed to update further) and staged for Production.
 #'   Packages with at least one failing not staged for Production,
-#'   and maintainers can update them with new GitHub/GitLab releases.
+#'   and maintainers can update them with new source code releases.
 #'
 #'   [stage_candidates()] writes `packages.json` to control
 #'   contents of the Staging universe.
