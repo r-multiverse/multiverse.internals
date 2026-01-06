@@ -12,7 +12,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/r-multiverse/multiverse.internals/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/r-multiverse/multiverse.internals/blob/1.1.10/DESCRIPTION)
 
 Landau WM, Gao C (2026). *multiverse.internals: Internal Infrastructure
 for R-multiverse*. R package version 1.1.10,
