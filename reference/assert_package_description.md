@@ -1,7 +1,7 @@
 # Assert package `DESCRIPTION`
 
-Run basic assertions on the `DESCRIPTION` file of a package on GitHub or
-GitLab.
+Run basic assertions on the `DESCRIPTION` file of a potential package
+contribution.
 
 ## Usage
 
@@ -18,7 +18,8 @@ assert_package_description(name, url)
 
 - url:
 
-  Character string, URL of the package on GitHub or GitLab.
+  Character string, URL of the package on a supported source code
+  repository.
 
 ## Value
 

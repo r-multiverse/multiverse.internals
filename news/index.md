@@ -1,5 +1,9 @@
 # Changelog
 
+## multiverse.internals 1.1.10
+
+- Support Codeberg.
+
 ## multiverse.internals 1.1.9
 
 - Bug fix: handle source build failures in
