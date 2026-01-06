@@ -22,7 +22,7 @@ get_repo_file_github <- function(url, path) {
     repo = basename(url),
     path = path
   )
-  rawToChar(base64enc::base64decode(response$content))
+  rawToChar(jsonlite::base64_dec(response$content))
 }
 
 get_repo_file_gitlab <- function(url, path) {
