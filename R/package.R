@@ -1,9 +1,8 @@
-#' @importFrom base64enc base64decode
 #' @importFrom cli cli_alert_danger cli_alert_success
 #' @importFrom desc description
 #' @importFrom gh gh
 #' @importFrom igraph make_graph neighbors subcomponent V
-#' @importFrom jsonlite parse_json read_json stream_in write_json
+#' @importFrom jsonlite base64_dec parse_json read_json stream_in write_json
 #' @importFrom nanonext ncurl parse_url status_code
 #' @importFrom pkgsearch cran_package
 #' @importFrom R.utils gzip

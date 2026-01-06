@@ -48,5 +48,5 @@ get_repo_file_codeberg <- function(url, path) {
   response <- nanonext::ncurl(url = query)
   stopifnot(response$response == 200L)
   json <- jsonlite::parse_json(response$data)
-  rawToChar(base64enc::base64decode(json$content))
+  rawToChar(jsonlite::base64_dec(json$content))
 }
