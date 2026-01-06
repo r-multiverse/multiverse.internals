@@ -126,10 +126,10 @@ test_that("https", {
   )
 })
 
-test_that("GitHub/GitLab URL", {
+test_that("source code URL", {
   expect_true(
     grepl(
-      "is not a repository in GitHub or GitLab",
+      "is not a repository in GitHub",
       review_package_text(
         name = "gh",
         url = "https://github.gov/r-lib/gh",

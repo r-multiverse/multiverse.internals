@@ -151,12 +151,12 @@ assert_no_advisories <- function(name, advisories) {
 assert_package_security_lints <- function(name, url) {
   parsed_url <- try(url_parse(url), silent = TRUE)
   findings <- NULL
-  domains <- c("github.com", "gitlab.com")
+  domains <- c("github.com", "gitlab.com", "codeberg.org")
   if (!(parsed_url[["hostname"]] %in% domains)) {
     finding <- paste(
       "URL",
       shQuote(url),
-      "is not a repository in GitHub or GitLab."
+      "is not a repository in GitHub, GitLab, or Codeberg."
     )
     findings <- c(findings, finding)
   }

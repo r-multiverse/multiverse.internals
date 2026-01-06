@@ -17,6 +17,16 @@ test_that("assert_package_description() GitHub", {
   )
 })
 
+test_that("assert_package_description() Codeberg", {
+  skip_if_offline()
+  expect_null(
+    assert_package_description(
+      name = "test",
+      url = "https://codeberg.org/wlandau/test"
+    )
+  )
+})
+
 test_that("assert_package_description() GitLab + free-form license file", {
   skip_if_offline()
   out <- assert_package_description(

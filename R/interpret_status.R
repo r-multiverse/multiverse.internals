@@ -208,7 +208,7 @@ interpert_version_conflicts <- function(status) {
       "dependency freeze. The version on R-multiverse is lower,",
       "which causes install.packages() to prefer CRAN.",
       "If you have not already done so, please ensure the latest",
-      "GitHub/GitLab release has a suitably recent version",
+      "source code release of your package has a suitably recent version",
       "in the DESCRIPTION file.<br><br>"
     )
   }
