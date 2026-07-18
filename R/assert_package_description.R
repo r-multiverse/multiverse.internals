@@ -124,8 +124,8 @@ assert_parsed_description <- function(name, description) {
 
 assert_license_local <- function(name, path, text) {
   lines <- unlist(strsplit(text, split = "\n"))
+  lines <- lines[nzchar(lines)]
   keys <- trimws(gsub(":.*$", "", lines))
-  keys <- keys[nzchar(keys)]
   acceptable <- c("COPYRIGHT HOLDER", "ORGANISATION", "ORGANIZATION", "YEAR")
   if (!all(keys %in% acceptable)) {
     return(
