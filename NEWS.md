@@ -1,3 +1,7 @@
+# multiverse.internals 1.1.11
+
+* Ignore empty lines in `LICENSE` file check.
+
 # multiverse.internals 1.1.10
 
 * Support Codeberg.
